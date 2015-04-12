@@ -1,5 +1,5 @@
-Introduction to the Mac Command Line
-====================================
+Command Line Basics
+===================
 
 What is a Command Line Interface?
 ---------------------------------
@@ -36,16 +36,21 @@ Whenever you first open the Terminal, it will open with your working directory (
 
 ```
 {your computer name}:~ {your user name}$ ls
-Desktop   Downloads   Movies  Pictures
-Documents Library     Music   Public
+Desktop		Downloads	Movies		Pictures
+Documents	Library		Music		Public
 {your computer name}:~ {your user name}$ 🁢
 ```
 
-Notice that the `ls` command showed us one directory that you can't see from the Mac GUI, the Library folder. There are other invisible files. We can see these by adding to the `ls` command what is known as a parameter `ls -a`.
+Notice that the `ls` command showed us one directory that you can't see from the Mac GUI, the Library folder. There are other invisible files. We can see these by adding to the `ls` command what is known as a parameter `-a`.  Together the command and parameter `ls -a` means 'list all'.
 
 ```
 {your computer name}:~ {your user name}$ ls
-Desktop   Downloads   Movies  Pictures
-Documents Library     Music   Public
+.			Desktop			Movies
+..			Documents		Music
+.CFUserTextEncoding	Downloads		Pictures
+.Trash			Library			Public
 {your computer name}:~ {your user name}$ 🁢
 ```
+
+
+
