@@ -3,15 +3,15 @@ Command Line Basics
 
 What is the Command Line Interface?
 -----------------------------------
-Underneath the wonderful Mac Graphical User Interface ("GUI") is a powerful and flexible method of working directly with files and the web. This is known as the "command line interface", or sometimes CLI.
+Underneath the wonderful Mac Graphical User Interface ("GUI") is a powerful and flexible method of working directly with files and the web. This is known as the "command line interface", or sometimes "CLI".
 
-It may seem geeky at first, and at first its depth may seem intimidating, but you don't need to learn it all of it for it for the command line to become quite useful to you. In particular, in order to learn how to program web applications or clients on the Mac, you will need to have some comfort with basics of the Mac command line.
+It may seem geeky at first, and its depth may seem intimidating, but you don't need to learn it all of it for it for the command line to become quite useful to you. In particular, in order to learn how to program web applications or clients effectively on the Mac, you will need to have some comfort with the basics of the Mac command line.
 
 The Terminal, the Console, the Shell, and the Command Line
 ----------------------------------------------------------
-First, you should learn how to start the built-in application that runs the Mac CLI, called the _Terminal_. To open it, rather than the usual GUI method of opening the Applications/Utilities directory and double-clicking the Terminal app, instead you should learn to open the Terminal with your keyboard.
+First, you should learn how to start the built-in application that runs the Mac CLI, called the _Terminal_. To open it, rather than the usual GUI method of opening the Applications/Utilities directory and double-clicking the Terminal app, instead you should learn to open the Terminal soley by using your keyboard.
 
-Type `command + spacebar` and then type `terminal` and press return. In fact, you don't even need to typically type the whole word — just the first few letters `ter` or `term` is usually enough.
+Type `command + spacebar` and then type `terminal` and press return. In fact, you don't even need to typically type the whole word -- just the first few letters `ter` or `term` is usually enough.
 
 When Terminal first opens, you should see a small window with this text in it:
 
@@ -19,22 +19,51 @@ When Terminal first opens, you should see a small window with this text in it:
 Last login: {some date} on console
 {your computer name}:~ {your user name}$ 🁢
 ```
-The window you see is created by the _Terminal_ application, and its contents (any commands and the text output from previous commands) are known as the _console_.
+The window you see is created by the _Terminal_ application, which more properly a form of _terminal emulator_ and its contents (any commands and the text output from previous commands) are known as the _console_. These words come from the days when you had a greent CRT screen and keyboard –- the machine as a whole was the the _terminal_, and the contents of the screen was the _console_. Our _terminal emulator_ provides us the experience of typing into an old school terminal from the convenience of our modern graphical operating system.
 
-The text before and including the $ is known as the _prompt_. The _command line_is the portion of the console where you can type, and is everything after the current prompt.
+The text before and including the $ is known as the _prompt_. The _command line_ is everything after the current prompt, and is the portion of the console where you can type.
 
-The 🁢 symbol is the location of you r on the command li_. Anything you type will appear under the text cursor and the text cursor will move to the next spot.
+The 🁢 symbol is the location of your _text cursor_ on the command line. Anything you type will appear under the text cursor and the text cursor will move to the next spot.
 
-The text you see is in the console created by what is known as the _shell_ application (the Mac defaults to the shell application known as _bash_). These are all slightly different, however often the words command line, console, terminal, shell, or bash are used interchangably.
+All the text you see in the console was created by what is known as the _shell_ application (the Mac defaults to the shell application known as _bash_).
+
+Often the words terminal, console, command line, shell, or bash are used interchangably, but these each are are all slightly different. 
 
 Someday you may want to switch to a more sophisticated Terminal applications (_iTerm_ is popular), or switch to a more sophisted text shell (_tsch_ is popular), or both. For the purpose of this _Intro to the Command Line_ tutorial we will only be using the default Mac _Terminal_ app, and the _bash_ command line text shell.
 
+Running a Command
+-----------------
 
+If you now type the text `ls -l ~` you will see the text appear to the right of the $. This is your _command_. Type return to _execute_ your command.
 
-Looking at Directories
-----------------------
+```
+{your computer name}:~ {your user name}$ ls -l ~
+total 0
+drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Desktop
+drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Documents
+drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Downloads
+drwx------@ 43 {your user name}  staff  1462 Apr 12 00:15 Library
+drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Movies
+drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Music
+drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Pictures
+drwxr-xr-x+  5 {your user name}  staff   170 Oct 21 18:44 Public
+{your computer name}:~ {your user name}$ 🁢
+```
 
-If you now type `pwd` you will see the text appear to the right of the $. This is your _command_. Type return to _execute_ your command.
+Nearly all commands follow a common pattern with 3 main parts. The program, the options, and the arguments. 
+
+The program is the verb, in this case the first part `ls`, which is short for _list_, which will show us a list of files.
+
+The options are like the adverb, and modify how the program is run. Options almost always begin with a hyphen. In this example `-l` means _long_, so the `ls` command will now show us more detailed information rather than just the names of the files.
+
+The arguments are what is left, and are the objects of our command. They describe what we want our program to act on. In this case we are using a special shorthand name for our home directory `~`. 
+
+Combined, these three parts tell the computer to list, in long form, the contents of your home directory.
+
+The Current Directory
+---------------------
+
+When you enter many commands without any arguments, they will act by default on on the current directory (aka folder) . What is the current directory? Type `pwd`.
 
 ```
 {your computer name}:~ {your user name}$ pwd
@@ -42,9 +71,9 @@ If you now type `pwd` you will see the text appear to the right of the $. This i
 {your computer name}:~ {your user name}$ 🁢
 ```
 
-The command `pwd` is short for 'print working directory' which basically means "Where am I now?". The result of `pwd` is the _path_ to where any shell commands will default to.
+The command `pwd` is short for 'print working directory' which basically means "Where am I now?". The result of `pwd` is the _path_ to where any commands without arguments will default to.
 
-Whenever you first open the Terminal, it will open with your working directory (aka folder) starting at your _home_ directory. Your home directory on the Mac will almost always be /Users/{your user name}, the directory that contains your Desktop, Documents, Downloads, Movies, Music, Pictures and Public directories. To see this list, enter the `ls` command (short for 'list'):
+Whenever you first open the Terminal, it will open by default with your working directory starting at your _home_ directory. Your home directory on the Mac will almost always be /Users/{your user name}, the directory that contains your Desktop, Documents, Downloads, Movies, Music, Pictures and Public directories. To see this list, enter the `ls` command:
 
 ```
 {your computer name}:~ {your user name}$ ls
@@ -53,7 +82,7 @@ Documents	Library		Music		Public
 {your computer name}:~ {your user name}$ 🁢
 ```
 
-Notice that the `ls` command showed us one additional directory that you can't see from your Mac's Finder GUI: the Library directory. There are other invisible files. We can see these by adding to the `ls` command what is known as a parameter, in this case `-a`.  Together the command and parameter `ls -a` means 'list all'.
+Notice that the `ls` command showed us one additional directory that you can't see from your Mac's Finder GUI: the Library directory. There can be other invisible files. We can see these by adding to the `ls` command an option, in this case `-a`.  Together the command and option `ls -a` means 'list all'.
 
 ```
 {your computer name}:~ {your user name}$ ls
@@ -64,9 +93,9 @@ Notice that the `ls` command showed us one additional directory that you can't s
 {your computer name}:~ {your user name}$ 🁢
 ```
 
-The 'ls -a' command reveals a number of files that are invisible to the Finder and the Mac GUI. Any file that begins with a period will be invisible to the Finder. We will learn more about these files later.
+The 'ls -a' command reveals a number of directory and files that are marked as invisible to the Finder and the Mac GUI. Any file or directory that begins with a period will also be invisible to the Finder. We will learn more about these files later.
 
-To look at the contents of another directory, you can add a _path_ parameter to the `ls` command. Type `ls Public` to see the contents of your Public directory (the name of the directory `Public` is case sensitive — `public` will not work).
+To look at the contents of another directory, you can add a _path_ option to the `ls` command. Type `ls Public` to see the contents of your Public directory (the name of the directory `Public` is case sensitive — `public` will not work).
 
 ```
 {your computer name}:~ {your user name}$ ls Public
@@ -74,7 +103,7 @@ Drop Box
 {your computer name}:~ {your user name}$ 🁢
 ```
 
-The `ls -l` command lists additional information about each item in the current directory:
+The `ls -l` (i.e. `list long`) command lists additional information about each item in the current directory:
 
 ```
 {your computer name}:~ {your user name}$ ls -l
@@ -90,7 +119,9 @@ drwxr-xr-x+  5 {your user name}  staff   170 Oct 21 18:44 Public
 {your computer name}:~ {your user name}$ 🁢
 ```
 
-You can combine parameters, so `ls -la` will list all the information about all the contents of the current directory, including hidden dot `.` files and invisible directories like the `Library`.
+With the `-l` option the `d` on the left tells you that the item in the directory contains another directory. A hyphen `-` tells you that the item is a file.
+
+You can combine options, so `ls -la` will list all the information about all the contents of the current directory, including hidden dot `.` files and invisible directories like the `Library`.
 
 ```
 {your computer name}:~ {your user name}$ ls -l
@@ -110,12 +141,10 @@ drwxr-xr-x+  5 {your user name}  staff   170 Oct 21 18:44 Public
 {your computer name}:~ {your user name}$ 🁢
 ```
 
-The `d` on the left tells you that the item in the directory is another directory. A hyphen `-` tells you that the item is a file.
-
-You can also add the path to see the contents of that `ls -la Public`
+You can also add the name of a directory as an arguement to see the contents of that directory, for example `ls -la Public`
 
 ```
-{your computer name}:~ {your user name}$ ls Public
+{your computer name}:~ {your user name}$ ls -la Public
 total 0
 drwxr-xr-x+  5 ChristopherA  staff  170 Oct 21 18:44 .
 drwxr-xr-x+ 13 ChristopherA  staff  442 Apr 12 12:41 ..
@@ -128,7 +157,7 @@ drwx-wx-wx+  3 ChristopherA  staff  102 Oct 21 18:44 Drop Box
 Tab Completion
 --------------
 
-A useful feature that the command line offers is called "command line completion" or "tab completion". What this means if you enter insufficient information, you can press the `tab` key to see what the choices are, or if there is only one choice, select that one.
+A useful feature that the command line offers is called "command line completion" or "tab completion". What this means if you enter insufficient information about an argument, you can press the `tab` key to see what the choices are, or if there is only one choice, select that one.
 
 Try this out by typing `ls M` then press the `tab` key instead of return.
 
@@ -167,6 +196,13 @@ drwxr-xr-x+ 5 ChristopherA  staff  170 Oct 21 18:44 ..
 ```
 
 Or you just type type `ls -la Pu` then press tab, then type `D` and press tab again. The path will be auto-completed.
+
+Finder Path Trick
+-----------------
+
+One trick for very long paths with spaces and other special characters in them is that you can drag the file or folder from a Finder window (or the folder icon in the title bar of a Finder window) to the prompt, and the full path and file name will be appended to your command line.
+
+Try `ls ` followed by dragging a random folder open in the Finder's GUI, then press `return`.
 
 Absolute Paths and Home Directory
 ---------------------------------
@@ -238,7 +274,7 @@ Note that your prompt now displays your working directory. To see the "absolute"
 {your computer name}:Desktop {your user name}$ 🁢
 ```
 
-To return to your home directory, you can type `cd` with no parameters, but I prefer to type `cd ~` to remind me that I'm returning to home.
+To return to your home directory, you can type `cd` with no options or arguments, but I prefer to type `cd ~` to remind me that I'm returning to home.
 
 Creating a Temp Directory
 -----------------------------
@@ -314,7 +350,7 @@ temp.bak	temporary.txt
 $
 ```
 
-We can delete both these file using the `rm` command (short for _remove_). Since `rm` can be dangerous, I always recommend you use it with the parameter `-i` which makes it interactive.
+We can delete both these file using the `rm` command (short for _remove_). Since `rm` can be dangerous, I always recommend you use it with the option `-i` which makes it interactive.
 
 ```
 $ rm -i temp.txt
@@ -361,7 +397,7 @@ The * and ? Wildcards
 
 Sometimes you want to rename or delete multiple files all at once. We can do this by using the `*` (sometimes called  _star_) wildcard character to replace zero or more characters in a filename or directory.
 
-The command `rm *` will delete every thing in the current working directory except for those files that are special and begin with a `.`, thus until you are very experienced, I recommend that you always use the `-i` (for _interactive_) parameter when using `rm`.
+The command `rm *` will delete every thing in the current working directory except for those files that are special and begin with a `.`, thus until you are very experienced, I recommend that you always use the `-i` (for _interactive_) option when using `rm`.
 
 Try this experiment:
 
@@ -481,7 +517,7 @@ $ ls
 $
 ```
 
-So now that we are done with our temp directory, we can delete the entire directory and all of its contents at once with the `rm -ir` command and parameter:
+So now that we are done with our temp directory, we can delete the entire directory and all of its contents at once with the `rm -ir` command and option:
 
 ```
 $ cd ..
@@ -506,7 +542,7 @@ Every one of these commands have help files associated with them, which can be v
 
 Like the `more` command, typing `space` moves down a window full of text, and typing `q` will quit. You can even see the man page for man with `man man`.
 
-Many, but not all commands will give you a brief summary of what they do if you type them without any parameters, or with the parameter `-h` or `--help`. Many parameters may be cryptic, but the man page for the commands should explain them in more detail.
+Many, but not all commands will give you a brief summary of what they do if you type them without any options, or with the option `-h` or `--help`. Many options may be cryptic, but the man page for the commands should explain them in more detail.
 
 
 
