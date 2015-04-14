@@ -1,14 +1,14 @@
 Command Line Basics
 ===================
 
-What is a Command Line Interface?
----------------------------------
+What is the Command Line Interface?
+-----------------------------------
 Underneath the wonderful Mac Graphical User Interface ("GUI") is a powerful and flexible method of working directly with files and the web. This is known as the "command line interface", or sometimes CLI.
 
 It may seem geeky at first, and at first its depth may seem intimidating, but you don't need to learn it all of it for it for the command line to become quite useful to you. In particular, in order to learn how to program web applications or clients on the Mac, you will need to have some comfort with basics of the Mac command line.
 
-The Terminal
-------------
+The Terminal, the Console, the Shell, and the Command Line
+----------------------------------------------------------
 First, you should learn how to start the built-in application that runs the Mac CLI, called the _Terminal_. To open it, rather than the usual GUI method of opening the Applications/Utilities directory and double-clicking the Terminal app, instead you should learn to open the Terminal with your keyboard.
 
 Type `command + spacebar` and then type `terminal` and press return. In fact, you don't even need to typically type the whole word — just the first few letters `ter` or `term` is usually enough.
@@ -19,9 +19,17 @@ When Terminal first opens, you should see a small window with this text in it:
 Last login: {some date} on console
 {your computer name}:~ {your user name}$ 🁢
 ```
-The window you see is created by the _Terminal_ application, but the text you see is is created by 'shell' application (the Mac defaults to shell known as _bash_). They are two different programs, and often words command line, terminal, shell, or bash are used interchangably, but they are all slightly different things. Someday you may want to switch to a more sophisticated Terminal applications (_iTerm_ is popular), or switch to a more sophisted text shell (_tsch_ is popular), or both. For the purpose of this _Intro to the Command Line_ tutorial we will only be using the default Mac _Terminal_ app, and the _bash_ command line text shell.
+The window you see is created by the _Terminal_ application, and its contents (any commands and the text output from previous commands) are known as the _console_.
 
-The text before and including the $ is known as the _prompt_. The 🁢 symbol is the location of your _text cursor_. Anything you type will appear under the text cursor and the text cursor will move to the next spot.
+The text before and including the $ is known as the _prompt_. The _command line_is the portion of the console where you can type, and is everything after the current prompt.
+
+The 🁢 symbol is the location of you r on the command li_. Anything you type will appear under the text cursor and the text cursor will move to the next spot.
+
+The text you see is in the console created by what is known as the _shell_ application (the Mac defaults to the shell application known as _bash_). These are all slightly different, however often the words command line, console, terminal, shell, or bash are used interchangably.
+
+Someday you may want to switch to a more sophisticated Terminal applications (_iTerm_ is popular), or switch to a more sophisted text shell (_tsch_ is popular), or both. For the purpose of this _Intro to the Command Line_ tutorial we will only be using the default Mac _Terminal_ app, and the _bash_ command line text shell.
+
+
 
 Looking at Directories
 ----------------------
@@ -98,7 +106,6 @@ drwx------@ 43 {your user name}  staff  1462 Apr 12 00:15 Library
 drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Movies
 drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Music
 drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Pictures
-drwxr-xr-x   2 {your user name}  staff    68 Apr 12 00:11 Projects
 drwxr-xr-x+  5 {your user name}  staff   170 Oct 21 18:44 Public
 {your computer name}:~ {your user name}$ 🁢
 ```
@@ -164,7 +171,11 @@ Or you just type type `ls -la Pu` then press tab, then type `D` and press tab ag
 Absolute Paths and Home Directory
 ---------------------------------
 
-So far, we have listed the contents of directories that exist inside our current directory. What if we want to see other directories? One way is by what is known as the "absolute path". These paths begin with the the `/` character. Try it:
+So far, we have listed the contents of directories that exist inside our current directory. Every directory on your computer has a name and a path that takes you to it.
+
+What if we want to see other directories? One way is by what is known as the "absolute path". These paths begin with the the `/` character.
+
+Try it:
 
 ```
 {your computer name}:~ {your user name}$ls /
@@ -179,7 +190,9 @@ etc				var
 {your computer name}:~ {your user name}$ 🁢
 ```
 
-This reveals items in the "root" folder of your computer. Some you will recognize from the Finder GUI, others are invisible to the finder. Now lets look at the absolute path for the Users Directory:
+This reveals items in the "root" folder of your computer. Some you will recognize from the Finder GUI, others are invisible to the Finder. For the command-line, the root directory `/` it is the starting point all the contents of your computer. It contains all the directories on your boot drive, directories for other drives, as well as a number of special system directories.
+
+Now lets look at the absolute path for the Users Directory:
 
 ```
 {your computer name}:~ {your user name}$ls /Users
@@ -191,17 +204,323 @@ Now lets add your user name (if it has a space in it try tab completion!):
 
 ```
 {your computer name}:~ {your user name}$ls /Users/{your user name}
-Desktop		Downloads	Movies		Pictures	Public
-Documents	Library		Music		Projects
+Desktop		Downloads	Movies		Pictures
+Documents	Library		Music		  Public
 {your computer name}:~ {your user name}$ 🁢
 ```
 
-This is is your current working directory, which is also the default "home" directory that the shell application defaults to, so it gives same exact result as `ls` by itself.
+This is is your current working directory, which is also the default "home" directory that the shell application defaults to, so it gives same exact result as `ls` by itself. 
+
+Your home directory `/Users/{your user name}/` or `~` for short, contains your personal files and directories. For example Pictures, Music, Documents, etc. Each of these directories is referenced as /home/{your user name}/{directory name}. For example Documents is located at /home/{your user name}/Documents.
 
 This home path will be different for each user of the machine, so there is a shortcut for it that is different for each user, taking them to their home directory. This is the tilde character `~`. Thus `ls`, `ls /Users/{your user name}/` and 'ls ~` all give the same result.
 
+Like with directories, files are referenced in the same way, for example a file named temp.txt located at the home directory of the user christophera can be referenced using the full path `/Users/christopher/temp.txt` or `~/temp.txt` by that user.
+
+Both files and directories can be referenced using their absolute paths from everywhere in the system. Additionally one can access them using only their name if it is in the same directory. For example, if your current working directory is `~` when using the terminal, you can access `/Users/{your user name}/temp.txt` file by entering just `temp.txt`.
+
+
 Changing Working Directory
 --------------------------
+
+In all of the examples above our current working directory path was the home directory. To change the current working directory, type `cd` followed by the {directory path}, for example:
+
+```
+{your computer name}:~ {your user name}$cd Desktop
+{your computer name}:Desktop {your user name}$ 🁢
+```
+
+Note that your prompt now displays your working directory. To see the "absolute" path of that directory, type `pwd` again.
+
+```
+{your computer name}:Desktop {your user name}$ pwd
+/Users/{your user name}/Desktop
+{your computer name}:Desktop {your user name}$ 🁢
+```
+
+To return to your home directory, you can type `cd` with no parameters, but I prefer to type `cd ~` to remind me that I'm returning to home.
+
+Creating a Temp Directory
+-----------------------------
+
+In most of remaining examples I'm no longer going to demonstrate the full prompt. Instead, if you see the first `$` shows where you are to type to the right of the prompt. A final `$` shows that the the output from your command has completed.
+
+As we don't want to clutter our home directory with lots of files, lets create a `temp` directory to hold our future work. We will use the `mkdir` (_make directory_) command, then enter the folder with the `cd` command, and confirm that we are there with the `pwd' command.
+
+```
+$ cd ~
+$ mkdir temp
+$ cd temp
+$ pwd
+/Users/{your user name}/temp
+$
+```
+
+Manipulating Files
+------------------
+
+To create your first empty file, use the `touch` command followed by the filename:
+
+```
+$ touch temp.txt
+$
+```
+
+You can see that this file exists with the `ls` command:
+
+```
+$ ls
+temp.txt
+$
+```
+
+You can edit this text file with your Mac GUI text editor (by default the _Text Edit_ app in your _Applications_ folder) by using the `open` command.
+
+```
+$ open temp.txt
+$
+````
+
+Enter some text in that file, save it (use `command + S`) and close it (use `command + W`). Then go back to terminal using either `command + tab` to cycle through your apps, or `command + space + term`. When using the Mac command-line it is important to learn these command keys — your hands rarely need to leave the keyboard.
+
+Now we can display that text using the `cat` command (whose name is short for _concatenate_).
+
+```
+$ cat temp.txt
+The quick brown fox jumped over the lazy dog.
+$
+````
+
+If there were many pages of text, you can also use the `more` command, which if there is more than window of text will display one window full at a time. Just type `space` to see the next window, or `q` to quit, or `h` to see a list of other choices.
+
+Now we can copy that file using the `cp` (_copy_) command.
+
+```
+$ cp temp.txt temporary.txt
+
+$ cat temporary.txt
+The quick brown fox jumped over the lazy dog.
+$ ls
+temp.txt	temporary.txt
+$
+````
+
+We can rename a file using the `mv` (_move_) command.
+
+```
+$ mv temp.txt temp.bak
+$ ls
+temp.bak	temporary.txt
+$
+```
+
+We can delete both these file using the `rm` command (short for _remove_). Since `rm` can be dangerous, I always recommend you use it with the parameter `-i` which makes it interactive.
+
+```
+$ rm -i temp.txt
+remove temp.txt? y
+$ rm -i temporary.txt
+remove temporary.txt? y
+````
+
+
+The .. and . Relative Paths
+---------------------------
+
+There are two special paths, the `.` and '..` - these are are used for what are _relative_ paths.
+
+The `..` directory is the directory _above_ the current working directory. So while still in the `~/temp` directory you type 'ls ..` and you will see the contents of the home directory:
+
+```
+$ ls ..
+Desktop		Downloads	Movies		Pictures
+Documents	Library		Music		Public
+$
+```
+
+While in the ~/temp you can also enter `ls ..\{directory name}` to see sibling directories under the home directory.
+
+If you were deep inside a complex set of directories, you can get out of them by entering `cd ..` - note how the prompt changes after each command:
+
+```
+{your computer name}:~ temp {your user name}$ pwd
+/Users/ChristopherA/temp
+{your computer name}:~ temp {your user name}$ cd ..
+{your computer name}:~ {your user name}$ cd ..
+{your computer name}:Users {your user name}$ cd ..
+{your computer name}:/ {your user name}$ cd ~/temp
+{your computer name}:temp {your user name}$ pwd
+/Users/{your user name}/temp
+{your computer name}:~ {your user name}$ 
+```
+
+A path beginning with `.`  means relative to the current working directory. In effect `ls .` is the same as `ls`. There are times when you absolutely want a path to be relative to where you are currently, use the `.` form.
+
+The * and ? Wildcards
+---------------------
+
+Sometimes you want to rename or delete multiple files all at once. We can do this by using the `*` (sometimes called  _star_) wildcard character to replace zero or more characters in a filename or directory.
+
+The command `rm *` will delete every thing in the current working directory except for those files that are special and begin with a `.`, thus until you are very experienced, I recommend that you always use the `-i` (for _interactive_) parameter when using `rm`.
+
+Try this experiment:
+
+```
+$ cd ~/temp
+$ ls
+$ ls -a
+.	..
+$ mkdir there
+$ touch .where here that then
+$ ls
+here	that	then	there
+$ ls -a
+.	..	.where	here	that	then	there
+$ rm -i t*
+remove that? y
+remove then? y
+rm: there: is a directory
+$ ls
+here there
+$ ls -a
+.	..	.where	here there
+$ rm -i *
+remove here? y
+rm: there: is a directory
+$ ls
+there
+$ ls -a
+.	..	.where	there
+$ rm -i .w*
+remove .where? y
+$ rm -i .*
+rm: "." and ".." may not be removed
+$
+```
+As you can see, trying to remove directories, including the `.` (the current directory) and `..` (the parent directory) is not allowed with the `rm -i` command. So how do you delete directories? With the `rmdir` command.
+
+```
+$ ls
+there
+$ rmdir there
+$ ls
+$
+```
+
+That may seem dangerous, but the `rmdir` command doesn't allow you to delete folders that have contents.
+
+```
+$ mkdir there
+$ touch there/that
+$ ls there
+that
+A$ rmdir there
+rmdir: there: Directory not empty
+$ rm -i there/*
+remove there/that? y
+$ rmdir there
+$ ls
+$
+```
+
+A particularly common use of the `*` wildcard is to view or delete only files with certain extensions. For instance:
+
+```
+$ touch a.txt b.txt a.jpg b.jpg
+$ ls a*
+a.jpg	a.txt
+$ ls a.*
+a.jpg	a.txt
+$ ls *.txt
+a.txt	b.txt
+$ rm -i a.*
+remove a.jpg? y
+remove a.txt? y
+$ ls
+b.jpg	b.txt
+$ rm -i *.txt
+remove b.txt? y
+$ ls
+b.jpg
+$ rm -i *.*
+remove b.jpg? y
+$ ls
+$
+```
+
+Suppose you have some files ending in `.jpg` and some ending in `.jpeg` -- the asterisk  makes clean-up easy:
+
+```
+$ touch a.jpg b.jpeg c.java d.js
+$ rm -i *.jp*g
+remove a.jpg? y
+remove b.jpeg? y
+$ rm -i *.j*
+remove c.java? y
+remove d.js? y
+$ ls
+$
+```
+
+The `*` wildcard match zero or more characters, but sometimes you may want to match only one character. In this case we use the `?` wildcard:
+
+```
+$ touch task  taskA  taskB  taskXY
+$ ls task*
+task  taskA  taskB  taskXY
+$ ls task?
+taskA  taskB
+$ ls task??
+taskXY
+$ rm -i ?ask*
+remove task? y
+remove taskA? y
+remove taskB? y
+remove taskXY? y
+$ ls
+$
+```
+
+So now that we are done with our temp directory, we can delete the entire directory and all of its contents at once with the `rm -ir` command and parameter:
+
+```
+$ cd ..
+$ pwd
+/Users/{your user name}
+$ ls temp
+task  taskA taskB taskXY
+$ rm -ir temp
+examine files in directory temp? y
+remove temp/task? y
+remove temp/taskA? y
+remove temp/taskB? y
+remove temp/taskXY? y
+remove temp? y
+$
+```
+
+Getting Help
+------------
+
+Every one of these commands have help files associated with them, which can be viewed with the `man` (short for _manual_) command.
+
+Like the `more` command, typing `space` moves down a window full of text, and typing `q` will quit. You can even see the man page for man with `man man`.
+
+Many, but not all commands will give you a brief summary of what they do if you type them without any parameters, or with the parameter `-h` or `--help`. Many parameters may be cryptic, but the man page for the commands should explain them in more detail.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
