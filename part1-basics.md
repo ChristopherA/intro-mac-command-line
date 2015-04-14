@@ -9,7 +9,7 @@ It may seem geeky at first, and its depth may seem intimidating, but you don't n
 
 The Terminal, the Console, the Shell, and the Command Line
 ----------------------------------------------------------
-First, you should learn how to start the built-in application that runs the Mac CLI, called the _Terminal_. To open it, rather than the usual GUI method of opening the Applications/Utilities directory and double-clicking the Terminal app, instead you should learn to open the Terminal soley by using your keyboard.
+First, you should learn how to start the built-in application that runs the Mac CLI, called the _Terminal_. To launch it, rather than the usual GUI method of opening the Applications/Utilities directory and double-clicking the Terminal app, instead you should learn to launch the Terminal soley by using your keyboard.
 
 Type `command + spacebar` and then type `terminal` and press return. In fact, you don't even need to typically type the whole word -- just the first few letters `ter` or `term` is usually enough.
 
@@ -50,7 +50,7 @@ drwxr-xr-x+  5 {your user name}  staff   170 Oct 21 18:44 Public
 {your computer name}:~ {your user name}$ 🁢
 ```
 
-Nearly all commands follow a common pattern with 3 main parts. The program, the options, and the arguments. 
+Nearly all commands follow a common pattern with 3 main parts. The program, the options, and the arguments, each seperated by spaces.
 
 The program is the verb, in this case the first part `ls`, which is short for _list_, which will show us a list of files.
 
@@ -71,9 +71,7 @@ When you enter many commands without any arguments, they will act by default on 
 {your computer name}:~ {your user name}$ 🁢
 ```
 
-The command `pwd` is short for 'print working directory' which basically means "Where am I now?". The result of `pwd` is the _path_ to where any commands without arguments will default to.
-
-Whenever you first open the Terminal, it will open by default with your working directory starting at your _home_ directory. Your home directory on the Mac will almost always be /Users/{your user name}, the directory that contains your Desktop, Documents, Downloads, Movies, Music, Pictures and Public directories. To see this list, enter the `ls` command:
+The command `pwd` is short for 'present working directory' which basically means "Where am I now?". The result of `pwd` is the _path_ to where any commands without arguments will default to.
 
 ```
 {your computer name}:~ {your user name}$ ls
@@ -184,7 +182,20 @@ ls: Public/Drop: No such file or directory
 {your computer name}:~ {your user name}$ 🁢
 ```
 
-Basically the shell application is confused by the space in name of the directory `Drop Box`. You can fix this by "escaping" the space by putting a backslash in front it, for example:
+Basically the `ls` program is confused by the space in name of the directory `Drop Box`, and it thinks you want to list the contents of `Drop` and `Box` as seperate arguments. 
+
+You can fix this by putting quotes around the path and file name:
+
+```
+{your computer name}:~ {your user name}$ls -la "Public/Drop Box"
+total 0
+drwx-wx-wx+ 3 ChristopherA  staff  102 Oct 21 18:44 .
+drwxr-xr-x+ 5 ChristopherA  staff  170 Oct 21 18:44 ..
+-rw-r--r--  1 ChristopherA  staff    0 Oct 21 18:44 .localized
+{your computer name}:~ {your user name}$ 🁢
+```
+
+Alternatively can fix this by "escaping" the space by putting a backslash in front it, for example:
 
 ```
 {your computer name}:~ {your user name}$ls -la Public/Drop\ Box
@@ -195,7 +206,7 @@ drwxr-xr-x+ 5 ChristopherA  staff  170 Oct 21 18:44 ..
 {your computer name}:~ {your user name}$ 🁢
 ```
 
-Or you just type type `ls -la Pu` then press tab, then type `D` and press tab again. The path will be auto-completed.
+Finally, you just type type `ls -la Pu` then press tab, then type `D` and press tab again. The path will be auto-completed with all the spaces properly escaped.
 
 Finder Path Trick
 -----------------
@@ -226,7 +237,7 @@ etc				var
 {your computer name}:~ {your user name}$ 🁢
 ```
 
-This reveals items in the "root" folder of your computer. Some you will recognize from the Finder GUI, others are invisible to the Finder. For the command-line, the root directory `/` it is the starting point all the contents of your computer. It contains all the directories on your boot drive, directories for other drives, as well as a number of special system directories.
+This reveals items in the "root" folder of your computer. Some you will recognize from the Finder GUI, others are invisible to the Finder. From the command-line, the root directory `/` is the starting point all the contents of your computer. It contains all the directories on your boot drive, directories for other drives, as well as a number of special system directories.
 
 Now lets look at the absolute path for the Users Directory:
 
@@ -255,7 +266,6 @@ Like with directories, files are referenced in the same way, for example a file 
 
 Both files and directories can be referenced using their absolute paths from everywhere in the system. Additionally one can access them using only their name if it is in the same directory. For example, if your current working directory is `~` when using the terminal, you can access `/Users/{your user name}/temp.txt` file by entering just `temp.txt`.
 
-
 Changing Working Directory
 --------------------------
 
@@ -279,7 +289,7 @@ To return to your home directory, you can type `cd` with no options or arguments
 Creating a Temp Directory
 -----------------------------
 
-In most of remaining examples I'm no longer going to demonstrate the full prompt. Instead, if you see the first `$` shows where you are to type to the right of the prompt. A final `$` shows that the the output from your command has completed.
+In most of remaining examples I'm no longer going to demonstrate the full prompt. Instead, when you see the first `$` it shows where you are to type to the right of that prompt. A final `$` with no text shows that the the output from your command has completed.
 
 As we don't want to clutter our home directory with lots of files, lets create a `temp` directory to hold our future work. We will use the `mkdir` (_make directory_) command, then enter the folder with the `cd` command, and confirm that we are there with the `pwd' command.
 
@@ -317,7 +327,7 @@ $ open temp.txt
 $
 ````
 
-Enter some text in that file, save it (use `command + S`) and close it (use `command + W`). Then go back to terminal using either `command + tab` to cycle through your apps, or `command + space + term`. When using the Mac command-line it is important to learn these command keys — your hands rarely need to leave the keyboard.
+Enter some text in that file, save it (use `command + S`) and close it (use `command + W`). Then go back to terminal using either `command + tab` to cycle through your apps, or `command + space + term`. When using the Mac command-line it is important to learn these command keys — your hands should rarely need to leave the keyboard.
 
 Now we can display that text using the `cat` command (whose name is short for _concatenate_).
 
@@ -333,11 +343,19 @@ Now we can copy that file using the `cp` (_copy_) command.
 
 ```
 $ cp temp.txt temporary.txt
-
 $ cat temporary.txt
 The quick brown fox jumped over the lazy dog.
 $ ls
 temp.txt	temporary.txt
+$
+````
+
+We can copy that file to another directory as well, by adding the path. In this case we will copy a temp file to the home directory.
+
+```
+$ cp temp.txt ~/temp.txt
+$ ls ~/*.txt
+temp.txt
 $
 ````
 
@@ -350,13 +368,31 @@ temp.bak	temporary.txt
 $
 ```
 
-We can delete both these file using the `rm` command (short for _remove_). Since `rm` can be dangerous, I always recommend you use it with the option `-i` which makes it interactive.
+We can also move a file with the same command.
+
+```
+$ ls
+temp.bak	temporary.txt
+$ ls ~/*.txt
+temp.txt
+$ mv ~/temp.txt ./temp.txt
+$ ls
+temp.bak	temp.txt  temporary.txt
+$ ls ~/*.txt
+$
+```
+
+
+We can delete all these file using the `rm` command (short for _remove_). Since `rm` can be dangerous, I always recommend you use it with the option `-i` which makes it interactive.
 
 ```
 $ rm -i temp.txt
 remove temp.txt? y
 $ rm -i temporary.txt
 remove temporary.txt? y
+$ rm -i temp.bak
+remove temp.bak? y
+$
 ````
 
 
@@ -395,7 +431,7 @@ A path beginning with `.`  means relative to the current working directory. In e
 The * and ? Wildcards
 ---------------------
 
-Sometimes you want to rename or delete multiple files all at once. We can do this by using the `*` (sometimes called  _star_) wildcard character to replace zero or more characters in a filename or directory.
+Sometimes you want copy, rename or delete multiple files all at once. We can do this by using the `*` (sometimes called  _star_) wildcard character to replace zero or more characters in a filename or directory.
 
 The command `rm *` will delete every thing in the current working directory except for those files that are special and begin with a `.`, thus until you are very experienced, I recommend that you always use the `-i` (for _interactive_) option when using `rm`.
 
@@ -443,7 +479,7 @@ $ ls
 $
 ```
 
-That may seem dangerous, but the `rmdir` command doesn't allow you to delete folders that have contents.
+This command may seem dangerous, but the `rmdir` command has a failsafe that doesn't allow you to delete folders that have contents. First you must delete any contents.
 
 ```
 $ mkdir there
@@ -484,7 +520,7 @@ $ ls
 $
 ```
 
-Suppose you have some files ending in `.jpg` and some ending in `.jpeg` -- the asterisk  makes clean-up easy:
+Suppose you have some files ending in `.jpg` and some ending in `.jpeg` -- the asterisk wildcard makes clean-up easy:
 
 ```
 $ touch a.jpg b.jpeg c.java d.js
