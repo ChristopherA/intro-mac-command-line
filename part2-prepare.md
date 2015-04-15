@@ -1,14 +1,14 @@
 Part 2 - Preparation and Installation
 =====================================
 
-Every Mac supports the command line, however, not every program that you need for web development is included by default. This tutorial instructs you on how to prepare and configure your Mac to make it a powerful web development system.
+Every Mac supports a large numer of command line tools, however, not every program that you need for web development is included by default. This tutorial instructs you on how to prepare and configure your Mac to make it a powerful web development system.
 
-You do not need to deeply understand all the commands that are used here — they are explained briefly, but you do not lean to learn them yet.
+You do not need to deeply understand all the commands that are used here — they are explained briefly, but you do not lean to learn them yet. I am explaining only because it is YOUR computer and you should know what and why these tools have been added.
 
 System Updates
 --------------
 
-The first thing you need to do is to make sure that you have the most recent version of the OS, which as of the writing of this intro is Mac OS X Yosemite 10.10.3. Everything here should work on previous version of the the OS, however, when you are doing web development it is important to have the most recent updates for security reasons.
+The first thing you need to do is to make sure that you have the most recent version of the OS, which as of the writing of this intro is Mac OS X Yosemite 10.10.3. Everything in these introduction files should work on previous version of the the OS, however, when you are doing web development it is important to have the most recent updates for security reasons.
 
 You can get all your system updates by going the the _App Store…_ item under the Apple Menu, clicking on the _Updates_ tab and pressing the _Update All_ button. However, you can also do it from the command line.
 
@@ -36,9 +36,9 @@ $
 Install Apple's Command Line Tools
 ----------------------------------
 
-Next we are going to install Apple's Command Line Tools, which will install a number of development tools that will be available from the command line.
+Next we are going to install Apple's Command Line Tools, which will install a number of development tools that will be available from the command line. There is a "trick" of touching a file that makes this happen from the command line without loading Apple's XCODE development environment for creating Mac and iOS apps.
 
-Because you've recently entered an administrative password for the `sudo` command, it may not ask you for your admin password again.
+Because you've recently entered an administrative password for the `sudo` command, the shell may not ask you for your admin password again.
 
 ```
 $ touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
@@ -56,24 +56,26 @@ Done.
 $/bin/rm /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
 ```
 
-You have just installed 92 development tools into your /Library/Developer/CommandLineTools/bin/
+With this installation you have just installed 92 development tools into your /Library/Developer/CommandLineTools/bin/
 
 ```
 BuildStrings CpMac DeRez GetFileInfo MergePef MvMac ResMerger Rez RezDet RezWack SetFile SplitForks UnRezWack ar as asa bison c++ c89 c99 cc clang clang++ cmpdylib codesign_allocate cpp ctags ctf_insert dsymutil dwarfdump dyldinfo flex flex++ g++ gatherheaderdoc gcc gcov git git-cvsserver git-receive-pack git-shell git-upload-archive git-upload-pack gm4 gnumake gperf hdxml2manxml headerdoc2html indent install_name_tool ld lex libtool lipo lldb llvm-cov llvm-profdata lorder m4 make mig mkdep nasm ndisasm nm nmedit otool pagestuff projectInfo ranlib rebase redo_prebinding resolveLinks rpcgen segedit size strings strip svn svnadmin svndumpfilter svnlook svnrdump svnserve svnsync svnversion unifdef unifdefall unwinddump what xml2man yacc
 ```
 
-Create Some Additional Home Folders
------------------------------------
+From now on, the Mac App Store's regular System Update will keep these tools current.
 
-I find it useful to prepare in advance some additional folder in my home "~" directory. The convention I use is that if the folder starts with a Capital, the folder contains items for Finder's GUI. If the folder begins with a lower-case letter (making it faster to type) that it is to used by the CLI.
+Create Some Additional Folders in Home
+--------------------------------------
+
+I find it useful to prepare in advance some additional folder in my home "~" directory. The convention I use is that if the folder starts with a Capital, the folder contains items for Finder's GUI. If the folder begins with a lower-case letter (making it faster to type) then it is to used by the CLI.
 
 All of these folders are optional — many you will not use until much later in this tutorial:
 
 * ~/.dotfiles # This is where I backup my dotfiles (explained later) and store some other useful tools.
-* ~/.dotfiles/bin # This is where I keep small command line scripts that I use regularly. 
+* ~/.dotfiles/bin # This is where I keep small command line scripts that I use regularly.
 * ~/Applications # This is where I keep any GUI apps that are installed for development purposes seperate from those root /Applications folder.
 * ~/code # This is where store the source code from open source repositories from github
-* ~/Pool # This is where I store large files that I don't backup on Time Machine. Great for movies, large installer files, etc. that I have backuped up elsewhere or are easily downloaded again from the net.
+* ~/Pool # This is where I store large files that I exclude from backing up on Time Machine. Great for movies, large installer files, etc. that I have backuped up elsewhere or are easily downloaded again from the net.
 * ~/projects # This is where I keep repositories of my own source code or others work-in-progress.
 * ~/temp # This is where I keep code and projects that are just temporary and can be deleted at any time. I practice here.
 
@@ -138,7 +140,7 @@ Your system is ready to brew.
 $
 ```
 
-If there were any errors, `brew doctor` will tell you how to fix them. If what it suggests to fix the problem doesn't work, I find that almost every problem has come up as a question on the website [StackOverflow](http://stackoverflow.com) so search for your solution there.
+If there were any errors, `brew doctor` will tell you how to fix them. If what it suggests to fix the problem doesn't work, I find that almost every problem that has come up is a question on the website [StackOverflow](http://stackoverflow.com) so search for your solution there.
 
 Install Git
 -----------
@@ -188,11 +190,10 @@ git version 2.3.5
 $
 ```
 
-
 Install Cask
 ------------
 
-[Cask](http://caskroom.io) is a special brew application that installs many Mac GUI apps. I find it particularly useful for installing those developer apps require an installer or a .dmg file. One other useful thing that it does is that it puts the app into your ~/Applications folder, keeping them seperate from your other apps.
+[Cask](http://caskroom.io) is a special brew application that installs a number of Mac GUI apps. I find it particularly useful for installing those developer apps require an installer or a .dmg file. One other useful thing that it does is that it puts the app into your ~/Applications folder, keeping them seperate from your other apps.
 
 ```
 $ brew install caskroom/cask/brew-cask
@@ -233,7 +234,7 @@ $
 Installing the Atom Text Editor
 -------------------------------
 
-Next we are going to install the Atom text editor. There are many powerful command line text editors out there (and a constant battle between fans of emacs vs those for vim), but learning them is outside the scope of this tutorial. In the meantime there is a very powerful, free and open source text editor optimized for command line and web developers called Atom. One of its best features is its integration with Git.
+Next we are going to use `brew cask` to install the Atom text editor. There are many powerful command line text editors out there (and a constant battle between fans of emacs vs those for vim), but learning them is outside the scope of this tutorial. In the meantime there is a very powerful, free and open source GUI text editor optimized for command line and web developers called Atom. One of its best features is its integration with Git.
 
 We will install it with `brew cask`
 
@@ -282,6 +283,52 @@ Bash completion has been installed to:
 $
 ```
 
+Web Get
+-------
+
+I find the `wget` tool to be very useful. Point it to a URL and it downloads the contents to a file. You can also do this with the built-in `curl` tool, but I find `wget` very useful at time.
+
+```
+$ brew install wget
+==> Installing wget dependency: openssl
+==> Downloading https://homebrew.bintray.com/bottles/openssl-1.0.2a-1.yosemite.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring openssl-1.0.2a-1.yosemite.bottle.tar.gz
+==> Caveats
+A CA file has been bootstrapped using certificates from the system
+keychain. To add additional certificates, place .pem files in
+  /usr/local/etc/openssl/certs
+
+and run
+  /usr/local/opt/openssl/bin/c_rehash
+
+This formula is keg-only, which means it was not symlinked into /usr/local.
+
+Mac OS X already provides this software and installing another version in
+parallel can cause all kinds of trouble.
+
+Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries
+
+Generally there are no consequences of this for you. If you build your
+own software and it requires this formula, you'll need to add to your
+build variables:
+
+    LDFLAGS:  -L/usr/local/opt/openssl/lib
+    CPPFLAGS: -I/usr/local/opt/openssl/include
+
+==> Downloading https://www.geotrust.com/resources/root_certificates/certificates/Equifax_Secure_
+######################################################################## 100.0%
+==> /usr/local/Cellar/openssl/1.0.2a-1/bin/c_rehash
+==> Summary
+🍺  /usr/local/Cellar/openssl/1.0.2a-1: 463 files, 18M
+==> Installing wget
+==> Downloading https://homebrew.bintray.com/bottles/wget-1.16.3.yosemite.bottle.tar.gz
+######################################################################## 100.0%
+==> Pouring wget-1.16.3.yosemite.bottle.tar.gz
+🍺  /usr/local/Cellar/wget/1.16.3: 9 files, 1.5M
+Aeguss-MacBook-Pro:intro-mac-command-line ChristopherA$
+```
+
 Brew & Cask Cleanup
 -------------------
 
@@ -303,3 +350,23 @@ Nothing to do
 $
 ```
 
+Final Cleanup
+-------------
+
+The whathis database, used by `whatis` and `apropos`, is only generated weekly, so run it after adding any commands.
+
+```
+$ sudo periodic daily weekly monthly
+```
+
+We also need to update the database used by `locate`. This will happen in the background and can take some time to generate the first time.
+
+```
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+```
+
+Finally, after installing new apps it is a good idea to repair disk permissions.
+
+```
+sudo diskutil repairPermissions /
+```
