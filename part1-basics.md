@@ -574,6 +574,35 @@ $
 Getting Help
 ------------
 
+If you don't remember what a command does, there is a command `whatis` that returns basic one line of information about it. You can also use it to search for complete words in a commands description:
+
+```
+$ whatis cat
+cat(1)                   - concatenate and print files
+$ whatis rm
+rm(1), unlink(1)         - remove directory entries
+$ whatis delete
+at(1), batch(1), atq(1), atrm(1) - queue, examine, or delete jobs for later execution
+delete(n)                - delete things in the interpreter
+ldapdelete(1)            - LDAP delete entry tool
+rename(ntcl)             - Rename or delete a command
+unset(ntcl)              - Delete variables
+$
+```
+
+Related is `apropos` which allows you to search keywords. It will typically return many more items than `whatis`.
+
+```
+$ whatis unzip
+unzip(1)                 - list, test and extract compressed files in a ZIP archive
+$ apropos unzip
+bzip2(1), bunzip2(1)     - a block-sorting file compressor, v1.0.6 bzcat - decompresses files to stdout bzip2recover - recovers data from damaged bzip2 files
+funzip(1)                - filter for extracting from a ZIP archive in a pipe
+unzip(1)                 - list, test and extract compressed files in a ZIP archive
+unzipsfx(1)              - self-extracting stub for prepending to ZIP archives
+$
+```
+
 Every one of these commands have help files associated with them, which can be viewed with the `man` (short for _manual_) command.
 
 Like the `more` command, typing `space` moves down a window full of text, and typing `q` will quit. You can even see the man page for man with `man man`.
