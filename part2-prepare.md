@@ -1,4 +1,4 @@
-Part 1 - Preparation and Installation
+Part 2 - Preparation and Installation
 =====================================
 
 Every Mac supports the command line, however, not every program that you need for web development is included by default. This tutorial instructs you on how to prepare and configure your Mac to make it a powerful web development system.
