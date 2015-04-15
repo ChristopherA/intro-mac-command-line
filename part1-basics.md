@@ -17,7 +17,7 @@ When Terminal first opens, you should see a small window with this text in it:
 
 ```
 Last login: {some date} on console
-{your computer name}:~ {your user name}$ 🁢
+COMPUTERNAME:~ USERNAME$ 🁢
 ```
 The window you see is created by the _Terminal_ application, which more properly a form of _terminal emulator_ and its contents (any commands and the text output from previous commands) are known as the _console_. These words come from the days when you had a greent CRT screen and keyboard –- the machine as a whole was the the _terminal_, and the contents of the screen was the _console_. Our _terminal emulator_ provides us the experience of typing into an old school terminal from the convenience of our modern graphical operating system.
 
@@ -27,7 +27,7 @@ The 🁢 symbol is the location of your _text cursor_ on the command line. Anyth
 
 All the text you see in the console was created by what is known as the _shell_ application (the Mac defaults to the shell application known as _bash_).
 
-Often the words terminal, console, command line, shell, or bash are used interchangably, but these each are are all slightly different. 
+Often the words terminal, console, command line, shell, or bash are used interchangably, but these each are are all slightly different.
 
 Someday you may want to switch to a more sophisticated Terminal applications (_iTerm_ is popular), or switch to a more sophisted text shell (_tsch_ is popular), or both. For the purpose of this _Intro to the Command Line_ tutorial we will only be using the default Mac _Terminal_ app, and the _bash_ command line text shell.
 
@@ -37,17 +37,17 @@ Running a Command
 If you now type the text `ls -l ~` you will see the text appear to the right of the $. This is your _command_. Type return to _execute_ your command.
 
 ```
-{your computer name}:~ {your user name}$ ls -l ~
+COMPUTERNAME:~ USERNAME$ ls -l ~
 total 0
-drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Desktop
-drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Documents
-drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Downloads
-drwx------@ 43 {your user name}  staff  1462 Apr 12 00:15 Library
-drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Movies
-drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Music
-drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Pictures
-drwxr-xr-x+  5 {your user name}  staff   170 Oct 21 18:44 Public
-{your computer name}:~ {your user name}$ 🁢
+drwx------+  3 USERNAME  staff   102 Oct 21 18:44 Desktop
+drwx------+  3 USERNAME  staff   102 Oct 21 18:44 Documents
+drwx------+  3 USERNAME  staff   102 Oct 21 18:44 Downloads
+drwx------@ 43 USERNAME  staff  1462 Apr 12 00:15 Library
+drwx------+  3 USERNAME  staff   102 Oct 21 18:44 Movies
+drwx------+  3 USERNAME  staff   102 Oct 21 18:44 Music
+drwx------+  3 USERNAME  staff   102 Oct 21 18:44 Pictures
+drwxr-xr-x+  5 USERNAME  staff   170 Oct 21 18:44 Public
+COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
 Nearly all commands follow a common pattern with 3 main parts. The program, the options, and the arguments, each seperated by spaces.
@@ -56,7 +56,7 @@ The program is the verb, in this case the first part `ls`, which is short for _l
 
 The options are like the adverb, and modify how the program is run. Options almost always begin with a hyphen. In this example `-l` means _long_, so the `ls` command will now show us more detailed information rather than just the names of the files.
 
-The arguments are what is left, and are the objects of our command. They describe what we want our program to act on. In this case we are using a special shorthand name for our home directory `~`. 
+The arguments are what is left, and are the objects of our command. They describe what we want our program to act on. In this case we are using a special shorthand name for our home directory `~`.
 
 Combined, these three parts tell the computer to list, in long form, the contents of your home directory.
 
@@ -66,29 +66,29 @@ The Current Directory
 When you enter many commands without any arguments, they will act by default on on the current directory (aka folder) . What is the current directory? Type `pwd`.
 
 ```
-{your computer name}:~ {your user name}$ pwd
-/Users/{your user name}
-{your computer name}:~ {your user name}$ 🁢
+COMPUTERNAME:~ USERNAME$ pwd
+/Users/USERNAME
+COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
 The command `pwd` is short for 'present working directory' which basically means "Where am I now?". The result of `pwd` is the _path_ to where any commands without arguments will default to.
 
 ```
-{your computer name}:~ {your user name}$ ls
+COMPUTERNAME:~ USERNAME$ ls
 Desktop		Downloads	Movies		Pictures
 Documents	Library		Music		Public
-{your computer name}:~ {your user name}$ 🁢
+COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
 Notice that the `ls` command showed us one additional directory that you can't see from your Mac's Finder GUI: the Library directory. There can be other invisible files. We can see these by adding to the `ls` command an option, in this case `-a`.  Together the command and option `ls -a` means 'list all'.
 
 ```
-{your computer name}:~ {your user name}$ ls
+COMPUTERNAME:~ USERNAME$ ls
 .			Desktop			Movies
 ..			Documents		Music
 .CFUserTextEncoding	Downloads		Pictures
 .Trash			Library			Public
-{your computer name}:~ {your user name}$ 🁢
+COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
 The 'ls -a' command reveals a number of directory and files that are marked as invisible to the Finder and the Mac GUI. Any file or directory that begins with a period will also be invisible to the Finder. We will learn more about these files later.
@@ -96,25 +96,25 @@ The 'ls -a' command reveals a number of directory and files that are marked as i
 To look at the contents of another directory, you can add a _path_ option to the `ls` command. Type `ls Public` to see the contents of your Public directory (the name of the directory `Public` is case sensitive — `public` will not work).
 
 ```
-{your computer name}:~ {your user name}$ ls Public
+COMPUTERNAME:~ USERNAME$ ls Public
 Drop Box
-{your computer name}:~ {your user name}$ 🁢
+COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
 The `ls -l` (i.e. `list long`) command lists additional information about each item in the current directory:
 
 ```
-{your computer name}:~ {your user name}$ ls -l
+COMPUTERNAME:~ USERNAME$ ls -l
 total 0
-drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Desktop
-drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Documents
-drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Downloads
-drwx------@ 43 {your user name}  staff  1462 Apr 12 00:15 Library
-drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Movies
-drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Music
-drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Pictures
-drwxr-xr-x+  5 {your user name}  staff   170 Oct 21 18:44 Public
-{your computer name}:~ {your user name}$ 🁢
+drwx------+  3 USERNAME  staff   102 Oct 21 18:44 Desktop
+drwx------+  3 USERNAME  staff   102 Oct 21 18:44 Documents
+drwx------+  3 USERNAME  staff   102 Oct 21 18:44 Downloads
+drwx------@ 43 USERNAME  staff  1462 Apr 12 00:15 Library
+drwx------+  3 USERNAME  staff   102 Oct 21 18:44 Movies
+drwx------+  3 USERNAME  staff   102 Oct 21 18:44 Music
+drwx------+  3 USERNAME  staff   102 Oct 21 18:44 Pictures
+drwxr-xr-x+  5 USERNAME  staff   170 Oct 21 18:44 Public
+COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
 With the `-l` option the `d` on the left tells you that the item in the directory contains another directory. A hyphen `-` tells you that the item is a file.
@@ -122,34 +122,34 @@ With the `-l` option the `d` on the left tells you that the item in the director
 You can combine options, so `ls -la` will list all the information about all the contents of the current directory, including hidden dot `.` files and invisible directories like the `Library`.
 
 ```
-{your computer name}:~ {your user name}$ ls -l
+COMPUTERNAME:~ USERNAME$ ls -l
 total 8
-drwxr-xr-x+ 14 {your user name}  staff   476 Apr 12 12:39 .
+drwxr-xr-x+ 14 USERNAME  staff   476 Apr 12 12:39 .
 drwxr-xr-x   6 root          admin   204 Oct 21 18:44 ..
--r--------   1 {your user name}  staff     7 Oct 21 18:46 .CFUserTextEncoding
-drwx------   2 {your user name}  staff    68 Apr 11 23:27 .Trash
-drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Desktop
-drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Documents
-drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Downloads
-drwx------@ 43 {your user name}  staff  1462 Apr 12 00:15 Library
-drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Movies
-drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Music
-drwx------+  3 {your user name}  staff   102 Oct 21 18:44 Pictures
-drwxr-xr-x+  5 {your user name}  staff   170 Oct 21 18:44 Public
-{your computer name}:~ {your user name}$ 🁢
+-r--------   1 USERNAME  staff     7 Oct 21 18:46 .CFUserTextEncoding
+drwx------   2 USERNAME  staff    68 Apr 11 23:27 .Trash
+drwx------+  3 USERNAME  staff   102 Oct 21 18:44 Desktop
+drwx------+  3 USERNAME  staff   102 Oct 21 18:44 Documents
+drwx------+  3 USERNAME  staff   102 Oct 21 18:44 Downloads
+drwx------@ 43 USERNAME  staff  1462 Apr 12 00:15 Library
+drwx------+  3 USERNAME  staff   102 Oct 21 18:44 Movies
+drwx------+  3 USERNAME  staff   102 Oct 21 18:44 Music
+drwx------+  3 USERNAME  staff   102 Oct 21 18:44 Pictures
+drwxr-xr-x+  5 USERNAME  staff   170 Oct 21 18:44 Public
+COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
 You can also add the name of a directory as an arguement to see the contents of that directory, for example `ls -la Public`
 
 ```
-{your computer name}:~ {your user name}$ ls -la Public
+COMPUTERNAME:~ USERNAME$ ls -la Public
 total 0
 drwxr-xr-x+  5 ChristopherA  staff  170 Oct 21 18:44 .
 drwxr-xr-x+ 13 ChristopherA  staff  442 Apr 12 12:41 ..
 -rw-r--r--   1 ChristopherA  staff    0 Oct 21 18:44 .com.apple.timemachine.supported
 -rw-r--r--   1 ChristopherA  staff    0 Oct 21 18:44 .localized
 drwx-wx-wx+  3 ChristopherA  staff  102 Oct 21 18:44 Drop Box
-{your computer name}:~ {your user name}$ 🁢
+COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
 Tab Completion
@@ -160,15 +160,15 @@ A useful feature that the command line offers is called "command line completion
 Try this out by typing `ls M` then press the `tab` key instead of return.
 
 ```
-{your computer name}:~ {your user name}$ ls M→
+COMPUTERNAME:~ USERNAME$ ls M→
 Movies/ Music/  
-{your computer name}:~ {your user name}$ ls M🁢
+COMPUTERNAME:~ USERNAME$ ls M🁢
 ```
 
 In this case there are two items that begin with M, so the command line lists them both, and retains the text that you started. Now add one more letter, `o` and press the `tab` key:
 
 ```
-{your computer name}:~ {your user name}$ ls Movies/🁢
+COMPUTERNAME:~ USERNAME$ ls Movies/🁢
 ```
 
 There was only one item that began with `Mo`, the Movies directory. If you press `return` you will see the contents of that folder.
@@ -176,34 +176,34 @@ There was only one item that began with `Mo`, the Movies directory. If you press
 Tab completion is very useful for file names that have spaces in them. For instance:
 
 ```
-{your computer name}:~ {your user name}$ls -la Public/Drop Box
+COMPUTERNAME:~ USERNAME$ls -la Public/Drop Box
 ls: Box: No such file or directory
 ls: Public/Drop: No such file or directory
-{your computer name}:~ {your user name}$ 🁢
+COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
-Basically the `ls` program is confused by the space in name of the directory `Drop Box`, and it thinks you want to list the contents of `Drop` and `Box` as seperate arguments. 
+Basically the `ls` program is confused by the space in name of the directory `Drop Box`, and it thinks you want to list the contents of `Drop` and `Box` as seperate arguments.
 
 You can fix this by putting quotes around the path and file name:
 
 ```
-{your computer name}:~ {your user name}$ls -la "Public/Drop Box"
+COMPUTERNAME:~ USERNAME$ls -la "Public/Drop Box"
 total 0
 drwx-wx-wx+ 3 ChristopherA  staff  102 Oct 21 18:44 .
 drwxr-xr-x+ 5 ChristopherA  staff  170 Oct 21 18:44 ..
 -rw-r--r--  1 ChristopherA  staff    0 Oct 21 18:44 .localized
-{your computer name}:~ {your user name}$ 🁢
+COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
 Alternatively can fix this by "escaping" the space by putting a backslash in front it, for example:
 
 ```
-{your computer name}:~ {your user name}$ls -la Public/Drop\ Box
+COMPUTERNAME:~ USERNAME$ls -la Public/Drop\ Box
 total 0
 drwx-wx-wx+ 3 ChristopherA  staff  102 Oct 21 18:44 .
 drwxr-xr-x+ 5 ChristopherA  staff  170 Oct 21 18:44 ..
 -rw-r--r--  1 ChristopherA  staff    0 Oct 21 18:44 .localized
-{your computer name}:~ {your user name}$ 🁢
+COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
 Finally, you just type type `ls -la Pu` then press tab, then type `D` and press tab again. The path will be auto-completed with all the spaces properly escaped.
@@ -225,7 +225,7 @@ What if we want to see other directories? One way is by what is known as the "ab
 Try it:
 
 ```
-{your computer name}:~ {your user name}$ls /
+COMPUTERNAME:~ USERNAME$ls /
 Applications			home
 Library				installer.failurerequests
 System				net
@@ -234,7 +234,7 @@ Volumes				sbin
 bin				tmp
 dev				usr
 etc				var
-{your computer name}:~ {your user name}$ 🁢
+COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
 This reveals items in the "root" folder of your computer. Some you will recognize from the Finder GUI, others are invisible to the Finder. From the command-line, the root directory `/` is the starting point all the contents of your computer. It contains all the directories on your boot drive, directories for other drives, as well as a number of special system directories.
@@ -242,29 +242,29 @@ This reveals items in the "root" folder of your computer. Some you will recogniz
 Now lets look at the absolute path for the Users Directory:
 
 ```
-{your computer name}:~ {your user name}$ls /Users
-{your user name} Shared
-{your computer name}:~ {your user name}$ 🁢
+COMPUTERNAME:~ USERNAME$ls /Users
+USERNAME Shared
+COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
 Now lets add your user name (if it has a space in it try tab completion!):
 
 ```
-{your computer name}:~ {your user name}$ls /Users/{your user name}
+COMPUTERNAME:~ USERNAME$ls /Users/USERNAME
 Desktop		Downloads	Movies		Pictures
 Documents	Library		Music		  Public
-{your computer name}:~ {your user name}$ 🁢
+COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
-This is is your current working directory, which is also the default "home" directory that the shell application defaults to, so it gives same exact result as `ls` by itself. 
+This is is your current working directory, which is also the default "home" directory that the shell application defaults to, so it gives same exact result as `ls` by itself.
 
-Your home directory `/Users/{your user name}/` or `~` for short, contains your personal files and directories. For example Pictures, Music, Documents, etc. Each of these directories is referenced as /home/{your user name}/{directory name}. For example Documents is located at /home/{your user name}/Documents.
+Your home directory `/Users/USERNAME/` or `~` for short, contains your personal files and directories. For example Pictures, Music, Documents, etc. Each of these directories is referenced as /home/USERNAME/{directory name}. For example Documents is located at /home/USERNAME/Documents.
 
-This home path will be different for each user of the machine, so there is a shortcut for it that is different for each user, taking them to their home directory. This is the tilde character `~`. Thus `ls`, `ls /Users/{your user name}/` and 'ls ~` all give the same result.
+This home path will be different for each user of the machine, so there is a shortcut for it that is different for each user, taking them to their home directory. This is the tilde character `~`. Thus `ls`, `ls /Users/USERNAME/` and 'ls ~` all give the same result.
 
 Like with directories, files are referenced in the same way, for example a file named temp.txt located at the home directory of the user christophera can be referenced using the full path `/Users/christopher/temp.txt` or `~/temp.txt` by that user.
 
-Both files and directories can be referenced using their absolute paths from everywhere in the system. Additionally one can access them using only their name if it is in the same directory. For example, if your current working directory is `~` when using the terminal, you can access `/Users/{your user name}/temp.txt` file by entering just `temp.txt`.
+Both files and directories can be referenced using their absolute paths from everywhere in the system. Additionally one can access them using only their name if it is in the same directory. For example, if your current working directory is `~` when using the terminal, you can access `/Users/USERNAME/temp.txt` file by entering just `temp.txt`.
 
 Changing Working Directory
 --------------------------
@@ -272,16 +272,16 @@ Changing Working Directory
 In all of the examples above our current working directory path was the home directory. To change the current working directory, type `cd` followed by the {directory path}, for example:
 
 ```
-{your computer name}:~ {your user name}$cd Desktop
-{your computer name}:Desktop {your user name}$ 🁢
+COMPUTERNAME:~ USERNAME$cd Desktop
+COMPUTERNAME:Desktop USERNAME$ 🁢
 ```
 
 Note that your prompt now displays your working directory. To see the "absolute" path of that directory, type `pwd` again.
 
 ```
-{your computer name}:Desktop {your user name}$ pwd
-/Users/{your user name}/Desktop
-{your computer name}:Desktop {your user name}$ 🁢
+COMPUTERNAME:Desktop USERNAME$ pwd
+/Users/USERNAME/Desktop
+COMPUTERNAME:Desktop USERNAME$ 🁢
 ```
 
 To return to your home directory, you can type `cd` with no options or arguments, but I prefer to type `cd ~` to remind me that I'm returning to home.
@@ -298,7 +298,7 @@ $ cd ~
 $ mkdir temp
 $ cd temp
 $ pwd
-/Users/{your user name}/temp
+/Users/USERNAME/temp
 $
 ```
 
@@ -415,15 +415,15 @@ While in the ~/temp you can also enter `ls ..\{directory name}` to see sibling d
 If you were deep inside a complex set of directories, you can get out of them by entering `cd ..` - note how the prompt changes after each command:
 
 ```
-{your computer name}:~ temp {your user name}$ pwd
+COMPUTERNAME:~ temp USERNAME$ pwd
 /Users/ChristopherA/temp
-{your computer name}:~ temp {your user name}$ cd ..
-{your computer name}:~ {your user name}$ cd ..
-{your computer name}:Users {your user name}$ cd ..
-{your computer name}:/ {your user name}$ cd ~/temp
-{your computer name}:temp {your user name}$ pwd
-/Users/{your user name}/temp
-{your computer name}:~ {your user name}$ 
+COMPUTERNAME:~ temp USERNAME$ cd ..
+COMPUTERNAME:~ USERNAME$ cd ..
+COMPUTERNAME:Users USERNAME$ cd ..
+COMPUTERNAME:/ USERNAME$ cd ~/temp
+COMPUTERNAME:temp USERNAME$ pwd
+/Users/USERNAME/temp
+COMPUTERNAME:~ USERNAME$
 ```
 
 A path beginning with `.`  means relative to the current working directory. In effect `ls .` is the same as `ls`. There are times when you absolutely want a path to be relative to where you are currently, use the `.` form.
@@ -558,7 +558,7 @@ So now that we are done with our temp directory, we can delete the entire direct
 ```
 $ cd ..
 $ pwd
-/Users/{your user name}
+/Users/USERNAME
 $ ls temp
 task  taskA taskB taskXY
 $ rm -ir temp
@@ -579,20 +579,3 @@ Every one of these commands have help files associated with them, which can be v
 Like the `more` command, typing `space` moves down a window full of text, and typing `q` will quit. You can even see the man page for man with `man man`.
 
 Many, but not all commands will give you a brief summary of what they do if you type them without any options, or with the option `-h` or `--help`. Many options may be cryptic, but the man page for the commands should explain them in more detail.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
