@@ -140,7 +140,7 @@ If you like it, add this to your ~/.bash_profile:
 
 ```
 if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
-  GIT_PROMPT_THEME=Default
+  GIT_PROMPT_THEME=Solarized
   source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
 fi
 ```
