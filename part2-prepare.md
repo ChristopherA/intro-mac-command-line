@@ -101,34 +101,73 @@ You can consider `brew` to be an app store for open source web apps and develope
 
 Brew is not installed on your Mac by default, so you'll need to run a script to install it. They provide a script to install it on their github site, which is run by `ruby` which is installed on your Mac by default. WARNING: Be cautious whenever someone asks you to run a script that has `curl` command in it, because if the author is malicious they can corrupt your system or make it vulnerable. In this case the script is run from a trusted website (github), and is from a trusted account there (Homebrew). I suggest you go to the [Homebrew](http://brew.sh) website and confirm that this is the correct script to use.
 
-This script will ask you for your administrator password.
+This script may ask you for your administrator password.
 
 ```
-$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ==> This script will install:
 /usr/local/bin/brew
-/usr/local/Library/...
+/usr/local/share/doc/homebrew
 /usr/local/share/man/man1/brew.1
+/usr/local/share/zsh/site-functions/_brew
+/usr/local/etc/bash_completion.d/brew
+/usr/local/Homebrew
+==> The following new directories will be created:
+/usr/local/Cellar
+/usr/local/Homebrew
+/usr/local/Frameworks
+/usr/local/bin
+/usr/local/etc
+/usr/local/include
+/usr/local/lib
+/usr/local/opt
+/usr/local/sbin
+/usr/local/share
+/usr/local/share/zsh
+/usr/local/share/zsh/site-functions
+/usr/local/var
 
 Press RETURN to continue or any other key to abort
-==> /usr/bin/sudo /bin/mkdir /usr/local
-Password:
-==> /usr/bin/sudo /bin/chmod g+rwx /usr/local
-==> /usr/bin/sudo /usr/bin/chgrp admin /usr/local
-==> /usr/bin/sudo /bin/mkdir /Library/Caches/Homebrew
-==> /usr/bin/sudo /bin/chmod g+rwx /Library/Caches/Homebrew
+==> /usr/bin/sudo /bin/mkdir -p /usr/local/Cellar /usr/local/Homebrew /usr/local/Frameworks /usr/local/bin /usr/local/etc /usr/local/include /usr/local/lib /usr/local/opt /usr/local/sbin /usr/local/share /usr/local/share/zsh /usr/local/share/zsh/site-functions /usr/local/var
+==> /usr/bin/sudo /bin/chmod g+rwx /usr/local/Cellar /usr/local/Homebrew /usr/local/Frameworks /usr/local/bin /usr/local/etc /usr/local/include /usr/local/lib /usr/local/opt /usr/local/sbin /usr/local/share /usr/local/share/zsh /usr/local/share/zsh/site-functions /usr/local/var
+==> /usr/bin/sudo /bin/chmod u+rwx share/zsh share/zsh/site-functions
+==> /usr/bin/sudo /usr/sbin/chown admin /usr/local/Cellar /usr/local/Homebrew /usr/local/Frameworks /usr/local/bin /usr/local/etc /usr/local/include /usr/local/lib /usr/local/opt /usr/local/sbin /usr/local/share /usr/local/share/zsh /usr/local/share/zsh/site-functions /usr/local/var
+==> /usr/bin/sudo /usr/bin/chgrp admin /usr/local/Cellar /usr/local/Homebrew /usr/local/Frameworks /usr/local/bin /usr/local/etc /usr/local/include /usr/local/lib /usr/local/opt /usr/local/sbin /usr/local/share /usr/local/share/zsh /usr/local/share/zsh/site-functions /usr/local/var
+==> /usr/bin/sudo /bin/mkdir -p /Users/admin/Library/Caches/Homebrew
+==> /usr/bin/sudo /bin/chmod g+rwx /Users/admin/Library/Caches/Homebrew
+==> /usr/bin/sudo /usr/sbin/chown admin /Users/admin/Library/Caches/Homebrew
 ==> Downloading and installing Homebrew...
-remote: Counting objects: 3528, done.
-remote: Compressing objects: 100% (3382/3382), done.
-remote: Total 3528 (delta 34), reused 1561 (delta 18), pack-reused 0
-Receiving objects: 100% (3528/3528), 2.65 MiB | 3.78 MiB/s, done.
-Resolving deltas: 100% (34/34), done.
-From https://github.com/Homebrew/homebrew
+remote: Counting objects: 1033, done.
+remote: Compressing objects: 100% (929/929), done.
+remote: Total 1033 (delta 95), reused 592 (delta 68), pack-reused 0
+Receiving objects: 100% (1033/1033), 1.05 MiB | 508.00 KiB/s, done.
+Resolving deltas: 100% (95/95), done.
+From https://github.com/Homebrew/brew
  * [new branch]      master     -> origin/master
-HEAD is now at f1964ec ngircd: update 22.1 bottle.
+HEAD is now at 23efbc5 Merge pull request #1051 from woodruffw/cctools-macho-remove
+==> Homebrew has enabled anonymous aggregate user behaviour analytics
+Read the analytics documentation (and how to opt-out) here:
+  https://git.io/brew-analytics
+==> Tapping homebrew/core
+Cloning into '/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core'...
+remote: Counting objects: 3725, done.
+remote: Compressing objects: 100% (3617/3617), done.
+remote: Total 3725 (delta 15), reused 1247 (delta 0), pack-reused 0
+Receiving objects: 100% (3725/3725), 2.91 MiB | 1.13 MiB/s, done.
+Resolving deltas: 100% (15/15), done.
+Checking connectivity... done.
+Tapped 3604 formulae (3,752 files, 9M)
+Checking out v1.0.1 in /usr/local/Homebrew...
+To checkout master in /usr/local/Homebrew run:
+  'cd /usr/local/Homebrew && git checkout master
+Already up-to-date.
 ==> Installation successful!
 ==> Next steps
 Run `brew help` to get started
+Further documentation: https://git.io/brew-docs
+==> Homebrew has enabled anonymous aggregate user behaviour analytics
+Read the analytics documentation (and how to opt-out) here:
+  https://git.io/brew-analytics
 $
 ```
 
@@ -196,38 +235,19 @@ Install Cask
 [Cask](http://caskroom.io) is a special brew application that installs a number of Mac GUI apps. I find it particularly useful for installing those developer apps require an installer or a .dmg file. One other useful thing that it does is that it puts the app into your ~/Applications folder, keeping them seperate from your other apps.
 
 ```
-$ brew install caskroom/cask/brew-cask
+$ brew tap caskroom/cask
+Checking out v1.0.1 in /usr/local/Homebrew...
+To checkout v1.0.1 in /usr/local/Homebrew run:
+  'cd /usr/local/Homebrew && git checkout v1.0.1
 ==> Tapping caskroom/cask
-Cloning into '/usr/local/Library/Taps/caskroom/homebrew-cask'...
-remote: Counting objects: 134040, done.
-remote: Compressing objects: 100% (31/31), done.
-remote: Total 134040 (delta 14), reused 0 (delta 0), pack-reused 134009
-Receiving objects: 100% (134040/134040), 39.94 MiB | 6.73 MiB/s, done.
-Resolving deltas: 100% (88744/88744), done.
+Cloning into '/usr/local/Homebrew/Library/Taps/caskroom/homebrew-cask'...
+remote: Counting objects: 3431, done.
+remote: Compressing objects: 100% (3412/3412), done.
+remote: Total 3431 (delta 37), reused 452 (delta 13), pack-reused 0
+Receiving objects: 100% (3431/3431), 1.16 MiB | 0 bytes/s, done.
+Resolving deltas: 100% (37/37), done.
 Checking connectivity... done.
-Tapped 1 formula (2823 files, 60M)
-==> Installing brew-cask from caskroom/homebrew-cask
-==> Cloning https://github.com/caskroom/homebrew-cask.git
-Cloning into '/Library/Caches/Homebrew/brew-cask--git'...
-remote: Counting objects: 2686, done.
-remote: Compressing objects: 100% (2531/2531), done.
-remote: Total 2686 (delta 198), reused 659 (delta 139), pack-reused 0
-Receiving objects: 100% (2686/2686), 5.62 MiB | 6.11 MiB/s, done.
-Resolving deltas: 100% (198/198), done.
-Checking connectivity... done.
-Note: checking out 'e65c40bb2bb02d7aa26f3d0ed6217862f2436055'.
-
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by performing another checkout.
-
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -b with the checkout command again. Example:
-
-  git checkout -b new_branch_name
-
-==> Checking out tag v0.53.3
-🍺  /usr/local/Cellar/brew-cask/0.53.3: 2421 files, 9.5M, built in 6 seconds
+Tapped 0 formulae (3,438 files, 3.6M)
 $
 ```
 
@@ -353,20 +373,8 @@ $
 Final Cleanup
 -------------
 
-The whathis database, used by `whatis` and `apropos`, is only generated weekly, so run it after adding any commands.
+The locate and whathis databases, used by the command line utilities `locate`, `whatis` and `apropos`, are only generated weekly, so run this after adding any commands to update the database. This will happen in the background and can take some time to generate the first time.
 
 ```
 $ sudo periodic daily weekly monthly
-```
-
-We also need to update the database used by `locate`. This will happen in the background and can take some time to generate the first time.
-
-```
-sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
-```
-
-Finally, after installing new apps it is a good idea to repair disk permissions.
-
-```
-sudo diskutil repairPermissions /
 ```

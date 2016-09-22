@@ -8,3 +8,5 @@ This git repository contains a tutorial and associated files to introduce people
 * [Part 3 - Customize Your Environment](https://github.com/ChristopherA/intro-mac-command-line/blob/master/part3-customize.md)
 
 This tutorial was created by [Christopher Allen](mailto:ChristopherA@LifeWithAlacrity.com) and is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License, based on the original work at [https://github.com/ChristopherA/intro-mac-commandline](https://github.com/ChristopherA/intro-mac-commandline).
+
+All of the the installation and customization features suggested by this tutorial are also automated as part of a prepare-osx.sh script in [https://github.com/ChristopherA/prepare-osx-for-webdev](https://github.com/ChristopherA/prepare-osx-for-webdev), however, I recommend that you do the tutorial first to understand what this script does.

@@ -182,5 +182,10 @@ $
 Finally, GitHub offers a useful Mac GUI app called [GitHub](https://mac.github.com) for browsing git repositories.
 
 ```
-$ brew cask install github
+$ brew cask install github-desktop 
 ```
+
+Prepare OSX Script
+------------------
+
+All of the the installation and customization features suggested by this tutorial are also automated as part of a prepare-osx.sh script in [https://github.com/ChristopherA/prepare-osx-for-webdev](https://github.com/ChristopherA/prepare-osx-for-webdev), however, I recommend that you do the tutorial by hand first to understand what this script does.
