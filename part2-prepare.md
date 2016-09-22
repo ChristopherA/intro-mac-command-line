@@ -235,38 +235,19 @@ Install Cask
 [Cask](http://caskroom.io) is a special brew application that installs a number of Mac GUI apps. I find it particularly useful for installing those developer apps require an installer or a .dmg file. One other useful thing that it does is that it puts the app into your ~/Applications folder, keeping them seperate from your other apps.
 
 ```
-$ brew install caskroom/cask/brew-cask
+$ brew tap caskroom/cask
+Checking out v1.0.1 in /usr/local/Homebrew...
+To checkout v1.0.1 in /usr/local/Homebrew run:
+  'cd /usr/local/Homebrew && git checkout v1.0.1
 ==> Tapping caskroom/cask
-Cloning into '/usr/local/Library/Taps/caskroom/homebrew-cask'...
-remote: Counting objects: 134040, done.
-remote: Compressing objects: 100% (31/31), done.
-remote: Total 134040 (delta 14), reused 0 (delta 0), pack-reused 134009
-Receiving objects: 100% (134040/134040), 39.94 MiB | 6.73 MiB/s, done.
-Resolving deltas: 100% (88744/88744), done.
+Cloning into '/usr/local/Homebrew/Library/Taps/caskroom/homebrew-cask'...
+remote: Counting objects: 3431, done.
+remote: Compressing objects: 100% (3412/3412), done.
+remote: Total 3431 (delta 37), reused 452 (delta 13), pack-reused 0
+Receiving objects: 100% (3431/3431), 1.16 MiB | 0 bytes/s, done.
+Resolving deltas: 100% (37/37), done.
 Checking connectivity... done.
-Tapped 1 formula (2823 files, 60M)
-==> Installing brew-cask from caskroom/homebrew-cask
-==> Cloning https://github.com/caskroom/homebrew-cask.git
-Cloning into '/Library/Caches/Homebrew/brew-cask--git'...
-remote: Counting objects: 2686, done.
-remote: Compressing objects: 100% (2531/2531), done.
-remote: Total 2686 (delta 198), reused 659 (delta 139), pack-reused 0
-Receiving objects: 100% (2686/2686), 5.62 MiB | 6.11 MiB/s, done.
-Resolving deltas: 100% (198/198), done.
-Checking connectivity... done.
-Note: checking out 'e65c40bb2bb02d7aa26f3d0ed6217862f2436055'.
-
-You are in 'detached HEAD' state. You can look around, make experimental
-changes and commit them, and you can discard any commits you make in this
-state without impacting any branches by performing another checkout.
-
-If you want to create a new branch to retain commits you create, you may
-do so (now or later) by using -b with the checkout command again. Example:
-
-  git checkout -b new_branch_name
-
-==> Checking out tag v0.53.3
-🍺  /usr/local/Cellar/brew-cask/0.53.3: 2421 files, 9.5M, built in 6 seconds
+Tapped 0 formulae (3,438 files, 3.6M)
 $
 ```
 
