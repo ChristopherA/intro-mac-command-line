@@ -101,34 +101,73 @@ You can consider `brew` to be an app store for open source web apps and develope
 
 Brew is not installed on your Mac by default, so you'll need to run a script to install it. They provide a script to install it on their github site, which is run by `ruby` which is installed on your Mac by default. WARNING: Be cautious whenever someone asks you to run a script that has `curl` command in it, because if the author is malicious they can corrupt your system or make it vulnerable. In this case the script is run from a trusted website (github), and is from a trusted account there (Homebrew). I suggest you go to the [Homebrew](http://brew.sh) website and confirm that this is the correct script to use.
 
-This script will ask you for your administrator password.
+This script may ask you for your administrator password.
 
 ```
-$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ==> This script will install:
 /usr/local/bin/brew
-/usr/local/Library/...
+/usr/local/share/doc/homebrew
 /usr/local/share/man/man1/brew.1
+/usr/local/share/zsh/site-functions/_brew
+/usr/local/etc/bash_completion.d/brew
+/usr/local/Homebrew
+==> The following new directories will be created:
+/usr/local/Cellar
+/usr/local/Homebrew
+/usr/local/Frameworks
+/usr/local/bin
+/usr/local/etc
+/usr/local/include
+/usr/local/lib
+/usr/local/opt
+/usr/local/sbin
+/usr/local/share
+/usr/local/share/zsh
+/usr/local/share/zsh/site-functions
+/usr/local/var
 
 Press RETURN to continue or any other key to abort
-==> /usr/bin/sudo /bin/mkdir /usr/local
-Password:
-==> /usr/bin/sudo /bin/chmod g+rwx /usr/local
-==> /usr/bin/sudo /usr/bin/chgrp admin /usr/local
-==> /usr/bin/sudo /bin/mkdir /Library/Caches/Homebrew
-==> /usr/bin/sudo /bin/chmod g+rwx /Library/Caches/Homebrew
+==> /usr/bin/sudo /bin/mkdir -p /usr/local/Cellar /usr/local/Homebrew /usr/local/Frameworks /usr/local/bin /usr/local/etc /usr/local/include /usr/local/lib /usr/local/opt /usr/local/sbin /usr/local/share /usr/local/share/zsh /usr/local/share/zsh/site-functions /usr/local/var
+==> /usr/bin/sudo /bin/chmod g+rwx /usr/local/Cellar /usr/local/Homebrew /usr/local/Frameworks /usr/local/bin /usr/local/etc /usr/local/include /usr/local/lib /usr/local/opt /usr/local/sbin /usr/local/share /usr/local/share/zsh /usr/local/share/zsh/site-functions /usr/local/var
+==> /usr/bin/sudo /bin/chmod u+rwx share/zsh share/zsh/site-functions
+==> /usr/bin/sudo /usr/sbin/chown admin /usr/local/Cellar /usr/local/Homebrew /usr/local/Frameworks /usr/local/bin /usr/local/etc /usr/local/include /usr/local/lib /usr/local/opt /usr/local/sbin /usr/local/share /usr/local/share/zsh /usr/local/share/zsh/site-functions /usr/local/var
+==> /usr/bin/sudo /usr/bin/chgrp admin /usr/local/Cellar /usr/local/Homebrew /usr/local/Frameworks /usr/local/bin /usr/local/etc /usr/local/include /usr/local/lib /usr/local/opt /usr/local/sbin /usr/local/share /usr/local/share/zsh /usr/local/share/zsh/site-functions /usr/local/var
+==> /usr/bin/sudo /bin/mkdir -p /Users/admin/Library/Caches/Homebrew
+==> /usr/bin/sudo /bin/chmod g+rwx /Users/admin/Library/Caches/Homebrew
+==> /usr/bin/sudo /usr/sbin/chown admin /Users/admin/Library/Caches/Homebrew
 ==> Downloading and installing Homebrew...
-remote: Counting objects: 3528, done.
-remote: Compressing objects: 100% (3382/3382), done.
-remote: Total 3528 (delta 34), reused 1561 (delta 18), pack-reused 0
-Receiving objects: 100% (3528/3528), 2.65 MiB | 3.78 MiB/s, done.
-Resolving deltas: 100% (34/34), done.
-From https://github.com/Homebrew/homebrew
+remote: Counting objects: 1033, done.
+remote: Compressing objects: 100% (929/929), done.
+remote: Total 1033 (delta 95), reused 592 (delta 68), pack-reused 0
+Receiving objects: 100% (1033/1033), 1.05 MiB | 508.00 KiB/s, done.
+Resolving deltas: 100% (95/95), done.
+From https://github.com/Homebrew/brew
  * [new branch]      master     -> origin/master
-HEAD is now at f1964ec ngircd: update 22.1 bottle.
+HEAD is now at 23efbc5 Merge pull request #1051 from woodruffw/cctools-macho-remove
+==> Homebrew has enabled anonymous aggregate user behaviour analytics
+Read the analytics documentation (and how to opt-out) here:
+  https://git.io/brew-analytics
+==> Tapping homebrew/core
+Cloning into '/usr/local/Homebrew/Library/Taps/homebrew/homebrew-core'...
+remote: Counting objects: 3725, done.
+remote: Compressing objects: 100% (3617/3617), done.
+remote: Total 3725 (delta 15), reused 1247 (delta 0), pack-reused 0
+Receiving objects: 100% (3725/3725), 2.91 MiB | 1.13 MiB/s, done.
+Resolving deltas: 100% (15/15), done.
+Checking connectivity... done.
+Tapped 3604 formulae (3,752 files, 9M)
+Checking out v1.0.1 in /usr/local/Homebrew...
+To checkout master in /usr/local/Homebrew run:
+  'cd /usr/local/Homebrew && git checkout master
+Already up-to-date.
 ==> Installation successful!
 ==> Next steps
 Run `brew help` to get started
+Further documentation: https://git.io/brew-docs
+==> Homebrew has enabled anonymous aggregate user behaviour analytics
+Read the analytics documentation (and how to opt-out) here:
+  https://git.io/brew-analytics
 $
 ```
 
