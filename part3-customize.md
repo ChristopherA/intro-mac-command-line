@@ -182,5 +182,5 @@ $
 Finally, GitHub offers a useful Mac GUI app called [GitHub](https://mac.github.com) for browsing git repositories.
 
 ```
-$ brew cask install github
+$ brew cask install github-desktop
 ```
