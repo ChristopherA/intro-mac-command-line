@@ -353,16 +353,10 @@ $
 Final Cleanup
 -------------
 
-The whathis database, used by `whatis` and `apropos`, is only generated weekly, so run it after adding any commands.
+The locate and whathis databases, used by the command line utilities `locate`, `whatis` and `apropos`, are only generated weekly, so run this after adding any commands to update the database. This will happen in the background and can take some time to generate the first time.
 
 ```
 $ sudo periodic daily weekly monthly
-```
-
-We also need to update the database used by `locate`. This will happen in the background and can take some time to generate the first time.
-
-```
-sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 ```
 
 Finally, after installing new apps it is a good idea to repair disk permissions.
