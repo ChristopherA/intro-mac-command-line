@@ -358,9 +358,3 @@ The locate and whathis databases, used by the command line utilities `locate`, `
 ```
 $ sudo periodic daily weekly monthly
 ```
-
-Finally, after installing new apps it is a good idea to repair disk permissions.
-
-```
-sudo diskutil repairPermissions /
-```
