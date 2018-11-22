@@ -206,7 +206,7 @@ drwxr-xr-x+ 5 ChristopherA  staff  170 Oct 21 18:44 ..
 COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
-Finally, you just type type `ls -la Pu` then press tab, then type `D` and press tab again. The path will be auto-completed with all the spaces properly escaped.
+Finally, you just type `ls -la Pu` then press tab, then type `D` and press tab again. The path will be auto-completed with all the spaces properly escaped.
 
 Finder Path Trick
 -----------------
