@@ -9,7 +9,7 @@ It may seem geeky at first, and its depth may seem intimidating, but you don't n
 
 The Terminal, the Console, the Shell, and the Command Line
 ----------------------------------------------------------
-First, you should learn how to start the built-in application that runs the Mac CLI, called the _Terminal_. To launch it, rather than the usual GUI method of opening the Applications/Utilities directory and double-clicking the Terminal app, instead you should learn to launch the Terminal soley by using your keyboard.
+First, you should learn how to start the built-in application that runs the Mac CLI, called the _Terminal_. To launch it, rather than the usual GUI method of opening the Applications/Utilities directory and double-clicking the Terminal app, instead you should learn to launch the Terminal solely by using your keyboard.
 
 Type `command + spacebar` and then type `terminal` and press return. In fact, you don't even need to typically type the whole word -- just the first few letters `ter` or `term` is usually enough.
 
@@ -19,7 +19,7 @@ When Terminal first opens, you should see a small window with this text in it:
 Last login: {some date} on console
 COMPUTERNAME:~ USERNAME$ 🁢
 ```
-The window you see is created by the _Terminal_ application, which more properly a form of _terminal emulator_ and its contents (any commands and the text output from previous commands) are known as the _console_. These words come from the days when you had a greent CRT screen and keyboard –- the machine as a whole was the the _terminal_, and the contents of the screen was the _console_. Our _terminal emulator_ provides us the experience of typing into an old school terminal from the convenience of our modern graphical operating system.
+The window you see is created by the _Terminal_ application, which more properly a form of _terminal emulator_ and its contents (any commands and the text output from previous commands) are known as the _console_. These words come from the days when you had a green CRT screen and keyboard –- the machine as a whole was the the _terminal_, and the contents of the screen was the _console_. Our _terminal emulator_ provides us the experience of typing into an old school terminal from the convenience of our modern graphical operating system.
 
 The text before and including the $ is known as the _prompt_. The _command line_ is everything after the current prompt, and is the portion of the console where you can type.
 
@@ -27,7 +27,7 @@ The 🁢 symbol is the location of your _text cursor_ on the command line. Anyth
 
 All the text you see in the console was created by what is known as the _shell_ application (the Mac defaults to the shell application known as _bash_).
 
-Often the words terminal, console, command line, shell, or bash are used interchangably, but these each are are all slightly different.
+Often the words terminal, console, command line, shell, or bash are used interchangeably, but these each are are all slightly different.
 
 Someday you may want to switch to a more sophisticated Terminal applications (_iTerm_ is popular), or switch to a more sophisted text shell (_tsch_ is popular), or both. For the purpose of this _Intro to the Command Line_ tutorial we will only be using the default Mac _Terminal_ app, and the _bash_ command line text shell.
 
@@ -50,7 +50,7 @@ drwxr-xr-x+  5 USERNAME  staff   170 Oct 21 18:44 Public
 COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
-Nearly all commands follow a common pattern with 3 main parts. The program, the options, and the arguments, each seperated by spaces.
+Nearly all commands follow a common pattern with 3 main parts. The program, the options, and the arguments, each separated by spaces.
 
 The program is the verb, in this case the first part `ls`, which is short for _list_, which will show us a list of files.
 
@@ -139,7 +139,7 @@ drwxr-xr-x+  5 USERNAME  staff   170 Oct 21 18:44 Public
 COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
-You can also add the name of a directory as an arguement to see the contents of that directory, for example `ls -la Public`
+You can also add the name of a directory as an argument to see the contents of that directory, for example `ls -la Public`
 
 ```
 COMPUTERNAME:~ USERNAME$ ls -la Public
@@ -182,7 +182,7 @@ ls: Public/Drop: No such file or directory
 COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
-Basically the `ls` program is confused by the space in name of the directory `Drop Box`, and it thinks you want to list the contents of `Drop` and `Box` as seperate arguments.
+Basically the `ls` program is confused by the space in name of the directory `Drop Box`, and it thinks you want to list the contents of `Drop` and `Box` as separate arguments.
 
 You can fix this by putting quotes around the path and file name:
 
@@ -206,7 +206,7 @@ drwxr-xr-x+ 5 ChristopherA  staff  170 Oct 21 18:44 ..
 COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
-Finally, you just type type `ls -la Pu` then press tab, then type `D` and press tab again. The path will be auto-completed with all the spaces properly escaped.
+Finally, you just type `ls -la Pu` then press tab, then type `D` and press tab again. The path will be auto-completed with all the spaces properly escaped.
 
 Finder Path Trick
 -----------------
@@ -291,7 +291,7 @@ Creating a Temp Directory
 
 In most of remaining examples I'm no longer going to demonstrate the full prompt. Instead, when you see the first `$` it shows where you are to type to the right of that prompt. A final `$` with no text shows that the the output from your command has completed.
 
-As we don't want to clutter our home directory with lots of files, lets create a `temp` directory to hold our future work. We will use the `mkdir` (_make directory_) command, then enter the folder with the `cd` command, and confirm that we are there with the `pwd' command.
+As we don't want to clutter our home directory with lots of files, let's create a `temp` directory to hold our future work. We will use the `mkdir` (_make directory_) command, then enter the folder with the `cd` command, and confirm that we are there with the `pwd' command.
 
 ```
 $ cd ~
@@ -657,7 +657,7 @@ Esc + D     Delete one word in front of cursor
 Esc + F     Move cursor forward one word on the current line
 Esc + R     Undo all changes made to this line
 Esc + T     Swap the last two words before the cursor
-Esc + Y     Pastes "Yanks" text that was previious Killed (Ctrl+K) before the last Kill
+Esc + Y     Pastes "Yanks" text that was previous Killed (Ctrl+K) before the last Kill
 Tab         Auto-complete files and folder names
 Tab Tab     Display all possible auto-complete values
 ```
@@ -671,7 +671,7 @@ Opt + Click Moves cursor to where the mouse was clicked in many shell editors.
 ``
 ! - starts a history substitution
 !n - the n-th command in bash's history list, for some integer n (works for negatives too)
-!! - the preceeding command; equivalent to !-1
+!! - the preceding command; equivalent to !-1
 !string - the most recent command starting with string
 
 Word designators select certain parts from an event. Use : to separate the event from the word designator. Words are numbered from 0 starting at the beginning of the line, and inserted into the current line separated by single spaces.
