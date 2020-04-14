@@ -122,7 +122,7 @@ With the `-l` option the `d` on the left tells you that the item in the director
 You can combine options, so `ls -la` will list all the information about all the contents of the current directory, including hidden dot `.` files and invisible directories like the `Library`.
 
 ```
-COMPUTERNAME:~ USERNAME$ ls -l
+COMPUTERNAME:~ USERNAME$ ls -la
 total 8
 drwxr-xr-x+ 14 USERNAME  staff   476 Apr 12 12:39 .
 drwxr-xr-x   6 root          admin   204 Oct 21 18:44 ..
