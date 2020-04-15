@@ -433,7 +433,7 @@ The * and ? Wildcards
 
 Sometimes you want copy, rename or delete multiple files all at once. We can do this by using the `*` (sometimes called  _star_) wildcard character to replace zero or more characters in a filename or directory.
 
-The command `rm *` will delete every thing in the current working directory except for those files that are special and begin with a `.`, thus until you are very experienced, I recommend that you always use the `-i` (for _interactive_) option when using `rm`.
+The command `rm *` will delete every thing in the current working directory except for those files that are special and begin with a `.`; thus, until you are very experienced, I recommend that you always use the `-i` (for _interactive_) option when using `rm`.
 
 Try this experiment:
 
