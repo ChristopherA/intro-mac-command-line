@@ -262,7 +262,7 @@ Your home directory `/Users/USERNAME/` or `~` for short, contains your personal 
 
 This home path will be different for each user of the machine, so there is a shortcut for it that is different for each user, taking them to their home directory. This is the tilde character `~`. Thus `ls`, `ls /Users/USERNAME/` and 'ls ~` all give the same result.
 
-Like with directories, files are referenced in the same way, for example a file named temp.txt located at the home directory of the user christophera can be referenced using the full path `/Users/christopher/temp.txt` or `~/temp.txt` by that user.
+Like with directories, files are referenced in the same way, for example a file named temp.txt located at the home directory of the user christophera can be referenced using the full path `/Users/christophera/temp.txt` or `~/temp.txt` by that user.
 
 Both files and directories can be referenced using their absolute paths from everywhere in the system. Additionally one can access them using only their name if it is in the same directory. For example, if your current working directory is `~` when using the terminal, you can access `/Users/USERNAME/temp.txt` file by entering just `temp.txt`.
 
