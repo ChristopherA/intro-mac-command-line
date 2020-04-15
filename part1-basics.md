@@ -237,7 +237,7 @@ etc				var
 COMPUTERNAME:~ USERNAME$ 🁢
 ```
 
-This reveals items in the "root" folder of your computer. Some you will recognize from the Finder GUI, others are invisible to the Finder. From the command-line, the root directory `/` is the starting point all the contents of your computer. It contains all the directories on your boot drive, directories for other drives, as well as a number of special system directories.
+This reveals items in the "root" folder of your computer. Some you will recognize from the Finder GUI, others are invisible to the Finder. From the command-line, the root directory `/` is the starting point for all the contents of your computer. It contains all the directories on your boot drive, directories for other drives, as well as a number of special system directories.
 
 Now lets look at the absolute path for the Users Directory:
 
