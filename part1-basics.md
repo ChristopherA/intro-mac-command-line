@@ -426,7 +426,7 @@ COMPUTERNAME:temp USERNAME$ pwd
 COMPUTERNAME:~ USERNAME$
 ```
 
-A path beginning with `.`  means relative to the current working directory. In effect `ls .` is the same as `ls`. There are times when you absolutely want a path to be relative to where you are currently, use the `.` form.
+A path beginning with `.`  means relative to the current working directory. In effect `ls .` is the same as `ls`. If you absolutely want a path to be relative to where you are currently, use the `.` form.
 
 The * and ? Wildcards
 ---------------------
