@@ -284,7 +284,7 @@ You can now edit this file using the familar Mac GUI experience.
 Install Node
 ------------
 
-[Node](https://nodejs.org) is a popular web server tool that runs Javascript. Installed on the Mac, it also provides an interactive environment for learning how to Javascript code and use various frameworks. We are installing it because a number of tutorials later use it.
+[Node](https://nodejs.org) is a popular web server tool that runs Javascript. Installed on the Mac, it also provides an interactive environment for learning how to run Javascript code and use various frameworks. We are installing it because a number of tutorials later use it.
 
 ```
 $ brew install node
