@@ -67,7 +67,7 @@ From now on, the Mac App Store's regular System Update will keep these tools cur
 Create Some Additional Folders in Home
 --------------------------------------
 
-I find it useful to prepare in advance some additional folder in my home "~" directory. The convention I use is that if the folder starts with a Capital, the folder contains items for Finder's GUI. If the folder begins with a lower-case letter (making it faster to type) then it is to used by the CLI.
+I find it useful to prepare in advance some additional folders in my home "~" directory. The convention I use is that if the folder starts with a Capital, the folder contains items for Finder's GUI. If the folder begins with a lower-case letter (making it faster to type) then it is to used by the CLI.
 
 All of these folders are optional — many you will not use until much later in this tutorial:
 
