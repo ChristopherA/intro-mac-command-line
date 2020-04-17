@@ -8,7 +8,7 @@ You do not need to deeply understand all the commands that are used here — the
 System Updates
 --------------
 
-The first thing you need to do is to make sure that you have the most recent version of the OS, which as of the writing of this intro is Mac OS X Yosemite 10.10.3. Everything in these introduction files should work on previous version of the the OS, however, when you are doing web development it is important to have the most recent updates for security reasons.
+The first thing you need to do is to make sure that you have the most recent version of the OS, which as of the writing of this intro is Mac OS X Yosemite 10.10.3. Everything in these introduction files should work on previous version of the the OS; however, when you are doing web development, it is important to have the most recent updates for security reasons.
 
 You can get all your system updates by going the the _App Store…_ item under the Apple Menu, clicking on the _Updates_ tab and pressing the _Update All_ button. However, you can also do it from the command line.
 
