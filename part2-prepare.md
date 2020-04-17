@@ -74,7 +74,7 @@ All of these folders are optional — many you will not use until much later in 
 * ~/.dotfiles # This is where I backup my dotfiles (explained later) and store some other useful tools.
 * ~/.dotfiles/bin # This is where I keep small command line scripts that I use regularly.
 * ~/Applications # This is where I keep any GUI apps that are installed for development purposes seperate from those root /Applications folder.
-* ~/code # This is where store the source code from open source repositories from github
+* ~/code # This is where I store source code from open source repositories from github
 * ~/Pool # This is where I store large files that I exclude from backing up on Time Machine. Great for movies, large installer files, etc. that I have backuped up elsewhere or are easily downloaded again from the net.
 * ~/projects # This is where I keep repositories of my own source code or others work-in-progress.
 * ~/temp # This is where I keep code and projects that are just temporary and can be deleted at any time. I practice here.
