@@ -373,7 +373,7 @@ $
 Final Cleanup
 -------------
 
-The locate and whathis databases, used by the command line utilities `locate`, `whatis` and `apropos`, are only generated weekly, so run this after adding any commands to update the database. This will happen in the background and can take some time to generate the first time.
+The locate and whatis databases, used by the command line utilities `locate`, `whatis` and `apropos`, are only generated weekly, so run this after adding any commands to update the database. This will happen in the background and can take some time to generate the first time.
 
 ```
 $ sudo periodic daily weekly monthly
