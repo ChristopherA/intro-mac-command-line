@@ -148,7 +148,7 @@ fi
 More Git & Github Tools
 -----------------
 
-You will be using `git` and the _GitHub_ serve regularly, so these tools add additional functionality.
+You will be using `git` and _GitHub_ regularly, so these tools add additional functionality.
 
 The first is called `hub`, and it provides all the functionality of `git`, but adds some _GitHub_ specific features.
 
