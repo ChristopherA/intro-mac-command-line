@@ -9,7 +9,7 @@ Solarized Terminal Profiles
 
 The _Terminal_ app allows you to choose from a number of options for how the terminal window is displayed. Open it's _Terminal_ menu _Preferences_ submenu and a number of options can be defined. Click on the _Profiles_ tab and see the choices. Of the default options, the _Homebrew_ profile is a useful choice — it is bright text on dark, which I personally find easier for coding.
 
-I personally use a dark background, but with a more subtly colored text based on the [Solarized](http://ethanschoonover.com/solarized). You can download and open my preferences using the `wget` command.
+I personally use a dark background, but with a more subtly colored text based on [Solarized](http://ethanschoonover.com/solarized). You can download and open my preferences using the `wget` command.
 
 ```
 $ cd ~/temp
