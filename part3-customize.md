@@ -99,7 +99,7 @@ Bash completion has been installed to:
 $
 ```
 
-To install bash-completeion one time type `. $(brew --prefix)/etc/bash_completion`. You can see all the apps that this `brew` recipe adds by typing 'complete -p'
+To install bash-completeion once, type `. $(brew --prefix)/etc/bash_completion`. You can see all the apps that this `brew` recipe adds by typing 'complete -p'
 
 Once again, if you want this permanently, is are some more lines to add to your ~/.bash_profile
 
