@@ -289,7 +289,7 @@ To return to your home directory, you can type `cd` with no options or arguments
 Creating a Temp Directory
 -----------------------------
 
-In most of remaining examples I'm no longer going to demonstrate the full prompt. Instead, when you see the first `$` it shows where you are to type to the right of that prompt. A final `$` with no text shows that the the output from your command has completed.
+In most of the remaining examples I'm no longer going to demonstrate the full prompt. Instead, when you see the first `$` it shows where you are to type to the right of that prompt. A final `$` with no text shows that the the output from your command has completed.
 
 As we don't want to clutter our home directory with lots of files, let's create a `temp` directory to hold our future work. We will use the `mkdir` (_make directory_) command, then enter the folder with the `cd` command, and confirm that we are there with the `pwd' command.
 
