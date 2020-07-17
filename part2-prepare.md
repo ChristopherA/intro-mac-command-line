@@ -3,7 +3,7 @@ Part 2 - Preparation and Installation
 
 Every Mac supports a large numer of command line tools, however, not every program that you need for web development is included by default. This tutorial instructs you on how to prepare and configure your Mac to make it a powerful web development system.
 
-You do not need to deeply understand all the commands that are used here — they are explained briefly, but you do not lean to learn them yet. I am explaining only because it is YOUR computer and you should know what and why these tools have been added.
+You do not need to deeply understand all the commands that are used here — they are explained briefly, but you do not need to learn them yet. I am explaining only because it is YOUR computer and you should know what and why these tools have been added.
 
 System Updates
 --------------
