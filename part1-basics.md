@@ -359,7 +359,7 @@ temp.txt
 $
 ````
 
-We can rename a file using the `mv` (_move_) command.
+We can rename a file using the `mv` (_move_) command (temp.txt -> temp.bak).
 
 ```
 $ mv temp.txt temp.bak
