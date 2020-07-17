@@ -129,7 +129,7 @@ You should add the following to your .bashrc (or equivalent):
 $
 ```
 
-To run it one time, type:
+To run it once, type:
 
 ```
 GIT_PROMPT_THEME=Default
