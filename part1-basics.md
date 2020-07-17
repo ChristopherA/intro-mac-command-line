@@ -155,7 +155,7 @@ COMPUTERNAME:~ USERNAME$ 🁢
 Tab Completion
 --------------
 
-A useful feature that the command line offers is called "command line completion" or "tab completion". What this means if you enter insufficient information about an argument, you can press the `tab` key to see what the choices are, or if there is only one choice, select that one.
+A useful feature that the command line offers is called "command line completion" or "tab completion". What this means is if you enter insufficient information about an argument, you can press the `tab` key to see what the choices are, or if there is only one choice, select that one.
 
 Try this out by typing `ls M` then press the `tab` key instead of return.
 
