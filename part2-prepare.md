@@ -232,7 +232,7 @@ $
 Install Cask
 ------------
 
-[Cask](http://caskroom.io) is a special brew application that installs a number of Mac GUI apps. I find it particularly useful for installing those developer apps require an installer or a .dmg file. One other useful thing that it does is that it puts the app into your ~/Applications folder, keeping them seperate from your other apps.
+[Cask](http://caskroom.io) is a special brew application that installs a number of Mac GUI apps. I find it particularly useful for installing those developer apps which require an installer or a .dmg file. One other useful thing that it does is that it puts the app into your ~/Applications folder, keeping them seperate from your other apps.
 
 ```
 $ brew tap caskroom/cask
