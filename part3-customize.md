@@ -73,7 +73,7 @@ fi
 Bash Completion
 ---------------
 
-There are a number of apps that don't allow tab completion of partial text the way others do. the `brew` app called `bash-completion` (from http://bash-completion.alioth.debian.org) will make many more commands support tab completion.
+There are a number of apps that don't allow tab completion of partial text the way others do. The `brew` app called `bash-completion` (from http://bash-completion.alioth.debian.org) will make many more commands support tab completion.
 
 ```
 $ brew install bash-completion
