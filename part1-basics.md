@@ -486,7 +486,7 @@ $ mkdir there
 $ touch there/that
 $ ls there
 that
-A$ rmdir there
+$ rmdir there
 rmdir: there: Directory not empty
 $ rm -i there/*
 remove there/that? y
